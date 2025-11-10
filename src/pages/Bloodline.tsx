@@ -3,28 +3,42 @@ import Footer from "@/components/Footer";
 import { Dna, Home, Scale, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import stressedWoman from "@/assets/stressed-woman.jpg";
+import irishHeritage from "@/assets/irish-heritage.jpg";
 import youngMary from "@/assets/young-mary.jpg";
 
 const Bloodline = () => {
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+    <div className="min-h-screen bg-background relative">
       <Navigation />
       
-      {/* Corner Images */}
-      <img 
-        src={stressedWoman} 
-        alt="Woman experiencing stress and overwhelm" 
-        className="absolute top-20 left-0 w-48 md:w-64 lg:w-80 h-auto rounded-br-3xl shadow-elegant opacity-90 z-0"
-      />
-      <img 
-        src={youngMary} 
-        alt="Young Mary as a child" 
-        className="absolute bottom-20 right-0 w-48 md:w-64 lg:w-80 h-auto rounded-tl-3xl shadow-elegant opacity-90 z-0"
-      />
+      {/* Corner Images with Inlay Effect */}
+      <div className="absolute top-32 left-8 md:left-12 w-56 md:w-72 lg:w-80 z-0">
+        <img 
+          src={irishHeritage} 
+          alt="Irish heritage site representing generational roots" 
+          className="w-full h-auto rounded-3xl shadow-soft opacity-80"
+          style={{
+            filter: 'blur(0.3px)',
+            maskImage: 'linear-gradient(to bottom right, black 60%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom right, black 60%, transparent 100%)'
+          }}
+        />
+      </div>
+      <div className="absolute bottom-32 right-8 md:right-12 w-56 md:w-72 lg:w-80 z-0">
+        <img 
+          src={youngMary} 
+          alt="Young Mary as a child" 
+          className="w-full h-auto rounded-3xl shadow-soft opacity-80"
+          style={{
+            filter: 'blur(0.3px)',
+            maskImage: 'linear-gradient(to top left, black 60%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to top left, black 60%, transparent 100%)'
+          }}
+        />
+      </div>
       
       <main className="pt-24 pb-20 relative z-10">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 md:px-20">
           {/* Header */}
           <div className="text-center mb-16 space-y-6">
             <div className="w-24 h-24 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto">
