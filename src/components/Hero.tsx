@@ -16,7 +16,7 @@ const Hero = () => {
             <div className="space-y-8">
               <h1 style={{
               filter: 'blur(0.6px)'
-            }} className="text-4xl md:text-6xl font-serif font-bold text-black/90 leading-tight lg:text-5xl">
+            }} className="text-4xl md:text-6xl font-serif text-black/90 leading-tight lg:text-7xl font-extrabold">
                 BE THE FIRST WOMAN IN YOUR FAMILY TO BUILD GENERATIONAL WEALTH—START WITH YOUR PROPERTY CODE.
               </h1>
 
