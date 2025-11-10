@@ -32,7 +32,7 @@ const NervousSystem = () => {
               <img 
                 src={stressedWoman} 
                 alt="Woman experiencing stress and overwhelm" 
-                className="w-full h-auto rounded-3xl shadow-soft mb-8"
+                className="float-right w-64 md:w-80 lg:w-96 h-auto rounded-3xl shadow-soft ml-6 mb-4"
                 style={{ filter: 'blur(0.3px)' }}
               />
               <p className="text-lg text-muted-foreground leading-relaxed">
