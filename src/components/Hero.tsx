@@ -17,7 +17,7 @@ const Hero = () => {
               <h1 style={{
               filter: 'blur(0.6px)'
             }} className="text-4xl md:text-6xl font-serif font-bold text-black/90 leading-tight lg:text-5xl">
-                find the powerhouse inside of you
+                BE THE FIRST WOMAN IN YOUR FAMILY TO BUILD GENERATIONAL WEALTH—START WITH YOUR PROPERTY CODE.
               </h1>
 
               {/* Keyword Carousel */}
