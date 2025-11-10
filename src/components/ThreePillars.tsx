@@ -7,20 +7,20 @@ const ThreePillars = () => {
   const pillars = [
     {
       icon: Brain,
-      title: "Regulation of Your Nervous System",
-      description: "Learn how your nervous system is intricately linked to your success in property investment. Discover how to regulate stress, emotional responses, and decision-making for optimal performance.",
+      title: "Regulating the Female Nervous System",
+      description: "81% of UK women felt overwhelmed by stress in the past year. With chronic dysregulated nervous systems, women experience 'I'm not safe, I'm not supported, I'm not seen'—making it impossible to start and sustain a property business. Learn the techniques to regulate your nervous system and oxytocin levels, creating a calming platform to build from without stress and burnout.",
       link: "/nervous-system"
     },
     {
       icon: Dna,
-      title: "Your Generational Bloodline",
-      description: "Understand how your ancestral patterns and historical barriers have shaped your relationship with property and wealth. Break free from inherited limitations.",
+      title: "The Generational Curse Blocking Your Property Growth",
+      description: "No-one is talking about this apart from ME. Historical barriers excluded women from property ownership for centuries—most societies favoured patrilineal inheritance and male ownership. These limitations mean many women today start with less generational wealth. Break free from these inherited limitations and recode your generational blueprint at an energetic level.",
       link: "/bloodline"
     },
     {
       icon: Lock,
-      title: "Your Property Belief System Code",
-      description: "Recode your success blueprint by understanding how epigenetics shapes your business behaviors. Rewire inherited patterns and unlock your full potential.",
+      title: "Your Property Personality Code",
+      description: "Property educators portray a lavish lifestyle, but they have a completely different fundamental belief system. Following their path without matching your belief code leads to overwhelm, procrastination, and failure. Discover your property personality code and resolve your inner tension to achieve success with ease—no more grind, just true alignment and results.",
       link: "/belief-system"
     }
   ];
@@ -33,9 +33,14 @@ const ThreePillars = () => {
             The 3 Pillars I Help You Unlock
             <span className="text-primary block mt-2">To Build Your Property Empire and Limitless Success</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-6">
-            Traditional property training does not work for the majority of women. NOW I unlock why. Ground breaking work so that all women find their personal success in property and not just a few.
-          </p>
+          <div className="text-lg text-muted-foreground max-w-4xl mx-auto mt-6 space-y-4">
+            <p>
+              Traditional property training does not work for the majority of women. NOW I unlock why. Ground breaking work so that all women find their personal success in property and not just a few. I go to such a deeper level to unlock what is really holding you back and believe me NO-ONE is working with women in property at this level.
+            </p>
+            <p>
+              Property training is surface level but this gives you the foundations you have to have in place in order to succeed and not just succeed but to do so with ease and flow, no more grind, no more hustle just true alignment and results.
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
