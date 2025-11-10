@@ -24,8 +24,9 @@ const Hero = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="space-y-8">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-black/90 leading-tight" style={{ filter: 'blur(0.6px)' }}>
-                Helping Women
-                <span className="text-black/90 block">Rewire the Subconscious</span>
+                HELPING WOMAN
+                <span className="text-black/90 block">REWRITE THE PLAYBOOK to CREATE</span>
+                <span className="text-black/90 block">LIMITLESS SUCCESS in PROPERTY</span>
               </h1>
 
               {/* Keyword Carousel */}
