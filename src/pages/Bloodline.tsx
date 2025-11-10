@@ -109,22 +109,22 @@ const Bloodline = () => {
               </div>
             </div>
 
-            <div className="p-8 bg-gradient-primary rounded-2xl text-primary-foreground clear-both">
-              {/* Young Mary Image - Float Right */}
+            <div className="relative">
+              {/* Young Mary Image - Positioned alongside */}
               <img 
                 src={youngMary} 
                 alt="Young Mary as a child" 
-                className="float-right w-48 md:w-64 lg:w-72 h-auto rounded-3xl shadow-soft opacity-90 ml-6 mb-4"
+                className="absolute -right-4 md:-right-8 top-0 w-48 md:w-64 lg:w-72 h-auto rounded-3xl shadow-soft opacity-90"
                 style={{
-                  filter: 'blur(0.3px)',
-                  shapeOutside: 'margin-box',
-                  shapeMargin: '1rem'
+                  filter: 'blur(0.3px)'
                 }}
               />
-              <h3 className="text-2xl font-semibold mb-3">Summary</h3>
-              <p className="text-lg leading-relaxed">
-                Because women were historically excluded from property ownership along bloodlines, many today start with less generational wealth or established business footing in the property sector. However, evolving legal and social attitudes have begun to change this landscape in recent decades.
-              </p>
+              <div className="p-8 bg-gradient-primary rounded-2xl text-primary-foreground clear-both max-w-xl">
+                <h3 className="text-2xl font-semibold mb-3">Summary</h3>
+                <p className="text-lg leading-relaxed">
+                  Because women were historically excluded from property ownership along bloodlines, many today start with less generational wealth or established business footing in the property sector. However, evolving legal and social attitudes have begun to change this landscape in recent decades.
+                </p>
+              </div>
             </div>
           </div>
 
