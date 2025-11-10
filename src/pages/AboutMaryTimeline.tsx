@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import timeline1 from "@/assets/timeline-1.jpg";
-import timeline2 from "@/assets/timeline-2.jpg";
+import irishHeritage from "@/assets/irish-heritage.jpg";
+import youngMary from "@/assets/young-mary.jpg";
 import timeline3 from "@/assets/timeline-3.jpg";
 import timeline4 from "@/assets/timeline-4.jpg";
 import timeline5 from "@/assets/timeline-5.jpg";
@@ -9,25 +9,25 @@ import timeline5 from "@/assets/timeline-5.jpg";
 const AboutMaryTimeline = () => {
   const timelineData = [
     {
-      year: "2010",
-      title: "The Beginning",
-      image: timeline1,
-      description: "Started my property investment journey with my first rental property. This was the moment that changed everything and set me on the path to financial freedom.",
+      year: "1980s",
+      title: "Irish Roots",
+      image: irishHeritage,
+      description: "Growing up in a traditional Irish family where property and wealth were passed through the male bloodline. This early experience shaped my understanding of generational barriers women face in property investment.",
       bullets: [
-        "Purchased first investment property",
-        "Learned the fundamentals of property management",
-        "Generated first passive income stream",
+        "Witnessed traditional inheritance patterns",
+        "Experienced gender-based property exclusion",
+        "Developed determination to break the cycle",
       ],
     },
     {
-      year: "2013",
-      title: "Building the Portfolio",
-      image: timeline2,
-      description: "Expanded to multiple properties, mastering the art of property selection and renovation strategies.",
+      year: "Early Years",
+      title: "Foundation of Resilience",
+      image: youngMary,
+      description: "As a young girl, I learned early that knowing my place was engrained in my generational female bloodline. This awakening would later fuel my mission to help other women break free.",
       bullets: [
-        "Acquired 3 additional properties",
-        "Developed renovation and value-add strategies",
-        "Achieved 25% ROI on portfolio",
+        "Recognized limiting family beliefs",
+        "Built inner strength and determination",
+        "Dreamed of a different future",
       ],
     },
     {
