@@ -114,7 +114,7 @@ const Bloodline = () => {
               <img 
                 src={youngMary} 
                 alt="Young Mary as a child" 
-                className="absolute -right-4 md:-right-8 top-0 w-48 md:w-64 lg:w-72 h-auto rounded-3xl shadow-soft opacity-90"
+                className="absolute -right-16 md:-right-20 lg:-right-24 top-0 w-48 md:w-64 lg:w-72 h-auto rounded-3xl shadow-soft opacity-90"
                 style={{
                   filter: 'blur(0.3px)'
                 }}
