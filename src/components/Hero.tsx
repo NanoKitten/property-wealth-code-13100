@@ -17,9 +17,7 @@ const Hero = () => {
               <h1 style={{
               filter: 'blur(0.6px)'
             }} className="text-4xl md:text-6xl font-serif font-bold text-black/90 leading-tight lg:text-5xl">
-                HELPING WOMAN
-                <span className="text-black/90 block">REWRITE THE PLAYBOOK to CREATE</span>
-                <span className="text-black/90 block">LIMITLESS SUCCESS in PROPERTY</span>
+                find the powerhouse inside of you
               </h1>
 
               {/* Keyword Carousel */}
