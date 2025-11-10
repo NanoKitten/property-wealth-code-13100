@@ -16,8 +16,7 @@ const Hero = () => {
             <div className="space-y-8">
             <h1 style={{
               filter: 'blur(0.6px)'
-            }} className="text-4xl md:text-6xl font-serif text-black leading-tight font-extrabold lg:text-6xl">
-                BE THE FIRST WOMAN IN <span className="text-primary">YOUR FAMILY TO BUILD GENERATIONAL WEALTH—</span>START WITH YOUR PROPERTY CODE.
+            }} className="text-4xl md:text-6xl font-serif text-black leading-tight font-extrabold lg:text-6xl">BE THE FIRST WOMAN IN YOUR FAMILY TO BUILD GENERATIONAL WEALTH<span className="text-primary">YOUR FAMILY TO BUILD GENERATIONAL WEALTH—</span>START WITH YOUR PROPERTY CODE.
               </h1>
 
               {/* Keyword Carousel */}
