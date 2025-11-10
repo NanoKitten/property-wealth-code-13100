@@ -3,13 +3,27 @@ import Footer from "@/components/Footer";
 import { Dna, Home, Scale, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import stressedWoman from "@/assets/stressed-woman.jpg";
+import youngMary from "@/assets/young-mary.jpg";
 
 const Bloodline = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
       <Navigation />
       
-      <main className="pt-24 pb-20">
+      {/* Corner Images */}
+      <img 
+        src={stressedWoman} 
+        alt="Woman experiencing stress and overwhelm" 
+        className="absolute top-20 left-0 w-48 md:w-64 lg:w-80 h-auto rounded-br-3xl shadow-elegant opacity-90 z-0"
+      />
+      <img 
+        src={youngMary} 
+        alt="Young Mary as a child" 
+        className="absolute bottom-20 right-0 w-48 md:w-64 lg:w-80 h-auto rounded-tl-3xl shadow-elegant opacity-90 z-0"
+      />
+      
+      <main className="pt-24 pb-20 relative z-10">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16 space-y-6">
