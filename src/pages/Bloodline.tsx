@@ -3,8 +3,8 @@ import Footer from "@/components/Footer";
 import { Dna, Home, Scale, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import irishHeritage from "@/assets/irish-heritage.jpg";
-import youngMary from "@/assets/young-mary.jpg";
+import maryDaughter from "@/assets/mary-daughter.jpg";
+import maryFamilyTemple from "@/assets/mary-family-temple.jpg";
 
 const Bloodline = () => {
   return (
@@ -30,16 +30,12 @@ const Bloodline = () => {
           {/* Main Content */}
           <div className="prose prose-lg max-w-none space-y-8">
             <section className="space-y-4">
-              {/* Irish Heritage Image - Float Left */}
+              {/* Mary & Daughter Image - Float Left */}
               <img 
-                src={irishHeritage} 
-                alt="Irish heritage site representing generational roots" 
-                className="float-left w-64 md:w-80 lg:w-96 h-auto rounded-3xl shadow-soft opacity-80 mr-6 mb-4"
-                style={{
-                  filter: 'blur(0.3px)',
-                  shapeOutside: 'margin-box',
-                  shapeMargin: '1rem'
-                }}
+                src={maryDaughter} 
+                alt="Mary with her daughter - breaking generational cycles" 
+                className="float-left w-64 md:w-80 lg:w-96 h-auto rounded-3xl shadow-soft mr-6 mb-4"
+                style={{ filter: 'blur(0.3px)' }}
               />
               <p className="text-lg text-muted-foreground leading-relaxed">
                 A woman's bloodline significantly influenced her historical access to property and, consequently, her ability to build a property business, largely because most societies favored patrilineal inheritance and male ownership for centuries.
@@ -109,17 +105,15 @@ const Bloodline = () => {
               </div>
             </div>
 
-            <div className="relative">
-              {/* Young Mary Image - Positioned alongside */}
+            <div className="relative clear-both">
+              {/* Family Temple Image - Positioned alongside */}
               <img 
-                src={youngMary} 
-                alt="Young Mary as a child" 
-                className="absolute -right-16 md:-right-20 lg:-right-24 top-0 w-48 md:w-64 lg:w-72 h-auto rounded-3xl shadow-soft opacity-90"
-                style={{
-                  filter: 'blur(0.3px)'
-                }}
+                src={maryFamilyTemple} 
+                alt="Mary with family at historical temple" 
+                className="absolute -right-16 md:-right-20 lg:-right-24 top-0 w-48 md:w-64 lg:w-72 h-auto rounded-3xl shadow-soft"
+                style={{ filter: 'blur(0.3px)' }}
               />
-              <div className="p-8 bg-gradient-primary rounded-2xl text-primary-foreground clear-both max-w-xl">
+              <div className="p-8 bg-gradient-primary rounded-2xl text-primary-foreground max-w-xl">
                 <h3 className="text-2xl font-semibold mb-3">Summary</h3>
                 <p className="text-lg leading-relaxed">
                   Because women were historically excluded from property ownership along bloodlines, many today start with less generational wealth or established business footing in the property sector. However, evolving legal and social attitudes have begun to change this landscape in recent decades.

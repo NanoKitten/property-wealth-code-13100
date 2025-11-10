@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Lock, Lightbulb, Users, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import maryCoaching from "@/assets/mary-coaching.jpg";
 
 const BeliefSystem = () => {
   return (
@@ -28,6 +29,12 @@ const BeliefSystem = () => {
           {/* Main Content */}
           <div className="prose prose-lg max-w-none space-y-8">
             <section className="space-y-4">
+              <img 
+                src={maryCoaching} 
+                alt="Mary coaching and empowering women" 
+                className="float-right w-64 md:w-80 lg:w-96 h-auto rounded-3xl shadow-soft ml-6 mb-4"
+                style={{ filter: 'blur(0.3px)' }}
+              />
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Epigenetics profoundly shapes the business experience and success pathways for women by influencing how inherited and lived experiences, social stress, and trauma are expressed through gene activity. Changes in gene expression—rather than fixed genetic code—can make women more sensitive to stress, adversity, and behavioral traits inherited from previous generations, impacting decision-making, risk tolerance, resilience, and leadership style.
               </p>

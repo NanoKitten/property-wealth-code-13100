@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Brain, Heart, Zap, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import stressedWoman from "@/assets/stressed-woman.jpg";
 
 const NervousSystem = () => {
   return (
@@ -28,6 +29,12 @@ const NervousSystem = () => {
           {/* Main Content */}
           <div className="prose prose-lg max-w-none space-y-8">
             <section className="space-y-4">
+              <img 
+                src={stressedWoman} 
+                alt="Woman experiencing stress and overwhelm" 
+                className="float-right w-64 md:w-80 lg:w-96 h-auto rounded-3xl shadow-soft ml-6 mb-4"
+                style={{ filter: 'blur(0.3px)' }}
+              />
               <p className="text-lg text-muted-foreground leading-relaxed">
                 A woman's nervous system is intricately linked to her success, particularly in how she manages stress, emotional responses, decision-making, and resilience. When the nervous system is regulated, women are better able to access clarity, confidence, and creativity, which are critical for high performance and leadership.
               </p>
