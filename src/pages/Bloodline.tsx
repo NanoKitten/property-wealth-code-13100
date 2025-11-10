@@ -11,20 +11,6 @@ const Bloodline = () => {
     <div className="min-h-screen bg-background relative">
       <Navigation />
       
-      {/* Bottom Right Corner Image */}
-      <div className="absolute bottom-32 right-8 md:right-12 w-56 md:w-72 lg:w-80 z-0">
-        <img 
-          src={youngMary} 
-          alt="Young Mary as a child" 
-          className="w-full h-auto rounded-3xl shadow-soft opacity-80"
-          style={{
-            filter: 'blur(0.3px)',
-            maskImage: 'linear-gradient(to top left, black 60%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to top left, black 60%, transparent 100%)'
-          }}
-        />
-      </div>
-      
       <main className="pt-24 pb-20 relative z-10">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 md:px-20">
           {/* Header */}
@@ -123,7 +109,18 @@ const Bloodline = () => {
               </div>
             </div>
 
-            <div className="p-8 bg-gradient-primary rounded-2xl text-primary-foreground">
+            <div className="p-8 bg-gradient-primary rounded-2xl text-primary-foreground clear-both">
+              {/* Young Mary Image - Float Right */}
+              <img 
+                src={youngMary} 
+                alt="Young Mary as a child" 
+                className="float-right w-48 md:w-64 lg:w-72 h-auto rounded-3xl shadow-soft opacity-90 ml-6 mb-4"
+                style={{
+                  filter: 'blur(0.3px)',
+                  shapeOutside: 'margin-box',
+                  shapeMargin: '1rem'
+                }}
+              />
               <h3 className="text-2xl font-semibold mb-3">Summary</h3>
               <p className="text-lg leading-relaxed">
                 Because women were historically excluded from property ownership along bloodlines, many today start with less generational wealth or established business footing in the property sector. However, evolving legal and social attitudes have begun to change this landscape in recent decades.
