@@ -11,19 +11,7 @@ const Bloodline = () => {
     <div className="min-h-screen bg-background relative">
       <Navigation />
       
-      {/* Corner Images with Inlay Effect */}
-      <div className="absolute top-32 left-8 md:left-12 w-56 md:w-72 lg:w-80 z-0">
-        <img 
-          src={irishHeritage} 
-          alt="Irish heritage site representing generational roots" 
-          className="w-full h-auto rounded-3xl shadow-soft opacity-80"
-          style={{
-            filter: 'blur(0.3px)',
-            maskImage: 'linear-gradient(to bottom right, black 60%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom right, black 60%, transparent 100%)'
-          }}
-        />
-      </div>
+      {/* Bottom Right Corner Image */}
       <div className="absolute bottom-32 right-8 md:right-12 w-56 md:w-72 lg:w-80 z-0">
         <img 
           src={youngMary} 
@@ -56,6 +44,17 @@ const Bloodline = () => {
           {/* Main Content */}
           <div className="prose prose-lg max-w-none space-y-8">
             <section className="space-y-4">
+              {/* Irish Heritage Image - Float Left */}
+              <img 
+                src={irishHeritage} 
+                alt="Irish heritage site representing generational roots" 
+                className="float-left w-64 md:w-80 lg:w-96 h-auto rounded-3xl shadow-soft opacity-80 mr-6 mb-4"
+                style={{
+                  filter: 'blur(0.3px)',
+                  shapeOutside: 'margin-box',
+                  shapeMargin: '1rem'
+                }}
+              />
               <p className="text-lg text-muted-foreground leading-relaxed">
                 A woman's bloodline significantly influenced her historical access to property and, consequently, her ability to build a property business, largely because most societies favored patrilineal inheritance and male ownership for centuries.
               </p>
