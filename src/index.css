@@ -20,6 +20,7 @@ All colors MUST be HSL.
 
     /* Terracotta Primary */
     --primary: 15 62% 39%;
+    --primary-dark: 15 62% 30%;
     --primary-foreground: 0 0% 100%;
     --primary-glow: 15 62% 49%;
 
@@ -98,6 +99,7 @@ All colors MUST be HSL.
     --popover-foreground: 285 19% 92%;
 
     --primary: 15 62% 49%;
+    --primary-dark: 15 62% 38%;
     --primary-foreground: 0 0% 100%;
     --primary-glow: 15 62% 59%;
 
