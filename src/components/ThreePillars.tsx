@@ -8,19 +8,19 @@ const ThreePillars = () => {
     {
       icon: Brain,
       title: "Regulating the Female Nervous System",
-      description: "81% of UK women felt overwhelmed by stress in the past year. With chronic dysregulated nervous systems, women experience 'I'm not safe, I'm not supported, I'm not seen'—making it impossible to start and sustain a property business. Learn the techniques to regulate your nervous system and oxytocin levels, creating a calming platform to build from without stress and burnout.",
+      description: "81% of UK women felt overwhelmed by stress in the past year. Chronic dysregulated nervous systems make it difficult to create your entrepreneurial property business. Learn techniques to regulate your nervous system and oxytocin levels—creating a calming platform to build from, without stress and burnout.",
       link: "/nervous-system"
     },
     {
       icon: Dna,
       title: "The Generational Curse Blocking Your Property Growth",
-      description: "No-one is talking about this apart from ME. Historical barriers excluded women from property ownership for centuries—most societies favoured patrilineal inheritance and male ownership. These limitations mean many women today start with less generational wealth. Break free from these inherited limitations and recode your generational blueprint at an energetic level.",
+      description: "No-one is talking about this apart from ME. I was raised in a traditional Irish family where boys inherited wealth and property. Knowing my place was engrained from my generational female bloodline. This work finally released me, and now I want to do the same for all women experiencing this—normally without even realising.",
       link: "/bloodline"
     },
     {
       icon: Lock,
       title: "Your Property Personality Code",
-      description: "Property educators portray a lavish lifestyle, but they have a completely different fundamental belief system. Following their path without matching your belief code leads to overwhelm, procrastination, and failure. Discover your property personality code and resolve your inner tension to achieve success with ease—no more grind, just true alignment and results.",
+      description: "Property educators portray a lavish lifestyle but have a completely different fundamental belief system. Following them isn't guaranteed if you have money blocks, success blocks, or fear of standing out. I've created a way to test your fundamental belief code and identify what personality you're showing up as in property.",
       link: "/belief-system"
     }
   ];
