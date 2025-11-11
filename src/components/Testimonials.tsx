@@ -61,29 +61,29 @@ const Testimonials = () => {
 
   // Layout 1: Grid (Default)
   const renderGridLayout = () => (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-16">
       {testimonials.map((testimonial, index) => (
         <Card key={index} className="relative bg-background border-0 shadow-soft hover:shadow-elegant transition-all duration-300 group">
-          <CardContent className="p-8 space-y-6">
+          <CardContent className="p-4 md:p-8 space-y-4 md:space-y-6">
             <div className="flex justify-between items-start">
-              <Quote className="h-8 w-8 text-primary/30" />
+              <Quote className="h-6 w-6 md:h-8 md:w-8 text-primary/30" />
               <div className="flex gap-1">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 text-primary fill-current" />
                 ))}
               </div>
             </div>
-            <p className="text-muted-foreground leading-relaxed italic">
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed italic">
               "{testimonial.text}"
             </p>
-            <div className="bg-gradient-blush rounded-lg p-4">
-              <p className="text-blush-foreground font-semibold text-sm">
+            <div className="bg-gradient-blush rounded-lg p-3 md:p-4">
+              <p className="text-blush-foreground font-semibold text-xs md:text-sm">
                 ✨ {testimonial.result}
               </p>
             </div>
-            <div className="border-t border-border pt-6">
-              <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
-              <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+            <div className="border-t border-border pt-4 md:pt-6">
+              <h4 className="font-semibold text-sm md:text-base text-foreground">{testimonial.name}</h4>
+              <p className="text-xs md:text-sm text-muted-foreground">{testimonial.title}</p>
               <p className="text-xs text-primary">{testimonial.location}</p>
             </div>
           </CardContent>
@@ -101,21 +101,21 @@ const Testimonials = () => {
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="w-full flex-shrink-0 px-4">
+            <div key={index} className="w-full flex-shrink-0 px-2 md:px-4">
               <Card className="bg-gradient-hero border-0 shadow-elegant max-w-4xl mx-auto">
-                <CardContent className="p-12 space-y-8">
-                  <Quote className="h-16 w-16 text-primary/20" />
-                  <p className="text-2xl text-foreground leading-relaxed italic">
+                <CardContent className="p-6 md:p-12 space-y-4 md:space-y-8">
+                  <Quote className="h-10 w-10 md:h-16 md:w-16 text-primary/20" />
+                  <p className="text-lg md:text-2xl text-foreground leading-relaxed italic">
                     "{testimonial.text}"
                   </p>
-                  <div className="flex items-center justify-between border-t border-border pt-8">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-t border-border pt-4 md:pt-8">
                     <div>
-                      <h4 className="text-xl font-semibold text-foreground">{testimonial.name}</h4>
-                      <p className="text-muted-foreground">{testimonial.title}</p>
-                      <p className="text-sm text-primary">{testimonial.location}</p>
+                      <h4 className="text-lg md:text-xl font-semibold text-foreground">{testimonial.name}</h4>
+                      <p className="text-sm md:text-base text-muted-foreground">{testimonial.title}</p>
+                      <p className="text-xs md:text-sm text-primary">{testimonial.location}</p>
                     </div>
-                    <div className="bg-primary/10 rounded-xl p-4">
-                      <p className="font-bold text-primary">{testimonial.result}</p>
+                    <div className="bg-primary/10 rounded-xl p-3 md:p-4">
+                      <p className="font-bold text-sm md:text-base text-primary">{testimonial.result}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -158,38 +158,38 @@ const Testimonials = () => {
 
   // Layout 3: Featured with List
   const renderFeaturedLayout = () => (
-    <div className="grid lg:grid-cols-3 gap-8 mb-16">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
       <div className="lg:col-span-2">
         <Card className="bg-gradient-hero border-0 shadow-elegant h-full">
-          <CardContent className="p-12 space-y-6">
-            <Quote className="h-12 w-12 text-primary/20" />
-            <p className="text-xl text-foreground leading-relaxed italic">
+          <CardContent className="p-6 md:p-12 space-y-4 md:space-y-6">
+            <Quote className="h-8 w-8 md:h-12 md:w-12 text-primary/20" />
+            <p className="text-base md:text-xl text-foreground leading-relaxed italic">
               "{testimonials[0].text}"
             </p>
-            <div className="bg-primary/10 rounded-xl p-6 inline-block">
-              <p className="font-bold text-primary text-lg">✨ {testimonials[0].result}</p>
+            <div className="bg-primary/10 rounded-xl p-4 md:p-6 inline-block">
+              <p className="font-bold text-primary text-sm md:text-lg">✨ {testimonials[0].result}</p>
             </div>
-            <div className="border-t border-border pt-6">
-              <h4 className="text-2xl font-semibold text-foreground">{testimonials[0].name}</h4>
-              <p className="text-muted-foreground">{testimonials[0].title}</p>
-              <p className="text-sm text-primary">{testimonials[0].location}</p>
+            <div className="border-t border-border pt-4 md:pt-6">
+              <h4 className="text-xl md:text-2xl font-semibold text-foreground">{testimonials[0].name}</h4>
+              <p className="text-sm md:text-base text-muted-foreground">{testimonials[0].title}</p>
+              <p className="text-xs md:text-sm text-primary">{testimonials[0].location}</p>
             </div>
           </CardContent>
         </Card>
       </div>
-      <div className="space-y-4">
+      <div className="space-y-3 md:space-y-4">
         {testimonials.slice(1, 4).map((testimonial, index) => (
           <Card key={index} className="bg-background border shadow-soft hover:shadow-elegant transition-all">
-            <CardContent className="p-6 space-y-3">
+            <CardContent className="p-4 md:p-6 space-y-2 md:space-y-3">
               <div className="flex gap-1">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-3 h-3 text-primary fill-current" />
                 ))}
               </div>
-              <p className="text-sm text-muted-foreground italic line-clamp-3">"{testimonial.text}"</p>
+              <p className="text-xs md:text-sm text-muted-foreground italic line-clamp-3">"{testimonial.text}"</p>
               <div className="flex justify-between items-end">
                 <div>
-                  <h5 className="font-semibold text-foreground text-sm">{testimonial.name}</h5>
+                  <h5 className="font-semibold text-foreground text-xs md:text-sm">{testimonial.name}</h5>
                   <p className="text-xs text-muted-foreground">{testimonial.location}</p>
                 </div>
                 <p className="text-xs font-semibold text-primary">{testimonial.result}</p>
@@ -246,33 +246,33 @@ const Testimonials = () => {
   // Layout 5: Horizontal Scroll
   const renderHorizontalScrollLayout = () => (
     <div className="mb-16">
-      <div className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide">
+      <div className="flex gap-3 md:gap-6 overflow-x-auto pb-4 md:pb-6 snap-x snap-mandatory scrollbar-hide">
         {testimonials.map((testimonial, index) => (
           <Card 
             key={index} 
-            className="flex-shrink-0 w-[400px] snap-center bg-gradient-hero border-0 shadow-elegant"
+            className="flex-shrink-0 w-[280px] md:w-[400px] snap-center bg-gradient-hero border-0 shadow-elegant"
           >
-            <CardContent className="p-8 space-y-6 h-full flex flex-col">
+            <CardContent className="p-5 md:p-8 space-y-4 md:space-y-6 h-full flex flex-col">
               <div className="flex justify-between items-start">
-                <Quote className="h-10 w-10 text-primary/30" />
+                <Quote className="h-8 w-8 md:h-10 md:w-10 text-primary/30" />
                 <div className="flex gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 text-primary fill-current" />
                   ))}
                 </div>
               </div>
-              <p className="text-foreground leading-relaxed italic flex-grow">
+              <p className="text-sm md:text-base text-foreground leading-relaxed italic flex-grow">
                 "{testimonial.text}"
               </p>
-              <div className="space-y-4">
-                <div className="bg-primary/10 rounded-lg p-4">
-                  <p className="font-bold text-primary text-sm">
+              <div className="space-y-3 md:space-y-4">
+                <div className="bg-primary/10 rounded-lg p-3 md:p-4">
+                  <p className="font-bold text-primary text-xs md:text-sm">
                     ✨ {testimonial.result}
                   </p>
                 </div>
-                <div className="border-t border-border pt-4">
-                  <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
-                  <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                <div className="border-t border-border pt-3 md:pt-4">
+                  <h4 className="font-semibold text-sm md:text-base text-foreground">{testimonial.name}</h4>
+                  <p className="text-xs md:text-sm text-muted-foreground">{testimonial.title}</p>
                   <p className="text-xs text-primary">{testimonial.location}</p>
                 </div>
               </div>
@@ -280,7 +280,7 @@ const Testimonials = () => {
           </Card>
         ))}
       </div>
-      <p className="text-center text-sm text-muted-foreground">← Scroll to see more →</p>
+      <p className="text-center text-xs md:text-sm text-muted-foreground">← Scroll to see more →</p>
     </div>
   );
 
@@ -336,22 +336,22 @@ const Testimonials = () => {
         {renderLayout()}
 
         {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div className="space-y-2">
-            <div className="text-3xl md:text-4xl font-bold font-serif text-primary">500+</div>
-            <p className="text-sm text-muted-foreground">Women Coached</p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
+          <div className="space-y-1 md:space-y-2">
+            <div className="text-2xl md:text-3xl lg:text-4xl font-bold font-serif text-primary">500+</div>
+            <p className="text-xs md:text-sm text-muted-foreground">Women Coached</p>
           </div>
-          <div className="space-y-2">
-            <div className="text-3xl md:text-4xl font-bold font-serif text-primary">£15M+</div>
-            <p className="text-sm text-muted-foreground">Property Purchased</p>
+          <div className="space-y-1 md:space-y-2">
+            <div className="text-2xl md:text-3xl lg:text-4xl font-bold font-serif text-primary">£15M+</div>
+            <p className="text-xs md:text-sm text-muted-foreground">Property Purchased</p>
           </div>
-          <div className="space-y-2">
-            <div className="text-3xl md:text-4xl font-bold font-serif text-primary">94%</div>
-            <p className="text-sm text-muted-foreground">Success Rate</p>
+          <div className="space-y-1 md:space-y-2">
+            <div className="text-2xl md:text-3xl lg:text-4xl font-bold font-serif text-primary">94%</div>
+            <p className="text-xs md:text-sm text-muted-foreground">Success Rate</p>
           </div>
-          <div className="space-y-2">
-            <div className="text-3xl md:text-4xl font-bold font-serif text-primary">4.9★</div>
-            <p className="text-sm text-muted-foreground">Average Rating</p>
+          <div className="space-y-1 md:space-y-2">
+            <div className="text-2xl md:text-3xl lg:text-4xl font-bold font-serif text-primary">4.9★</div>
+            <p className="text-xs md:text-sm text-muted-foreground">Average Rating</p>
           </div>
         </div>
       </div>

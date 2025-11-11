@@ -54,7 +54,7 @@ const Navigation = () => {
                   Unlocking Success
                   <ChevronDown className="h-4 w-4" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-background border-border">
+                <DropdownMenuContent align="start" className="bg-background border-border">
                   {unlockingSuccessItems.map((item) => (
                     <DropdownMenuItem key={item.name} asChild>
                       <a
@@ -140,7 +140,7 @@ const Navigation = () => {
                   Unlocking Success
                   <ChevronDown className="h-4 w-4" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-background border-border w-full">
+                <DropdownMenuContent align="start" className="bg-background border-border w-full">
                   {unlockingSuccessItems.map((item) => (
                     <DropdownMenuItem key={item.name} asChild>
                       <a

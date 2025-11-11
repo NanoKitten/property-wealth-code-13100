@@ -2,6 +2,7 @@ import { Brain, Dna, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 const ThreePillars = () => {
   const pillars = [
@@ -43,7 +44,8 @@ const ThreePillars = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Desktop: Grid Layout */}
+        <div className="hidden md:grid md:grid-cols-3 gap-8">
           {pillars.map((pillar, index) => (
             <Card key={index} className="bg-background border-0 shadow-soft hover:shadow-elegant transition-all duration-300 group">
               <CardContent className="p-8 space-y-6 h-full flex flex-col">
@@ -69,6 +71,48 @@ const ThreePillars = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Mobile: Carousel */}
+        <div className="md:hidden">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: false,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2">
+              {pillars.map((pillar, index) => (
+                <CarouselItem key={index} className="pl-2 basis-[85%]">
+                  <Card className="bg-background border-0 shadow-soft h-full">
+                    <CardContent className="p-8 space-y-6 h-full flex flex-col">
+                      <div className="w-20 h-20 bg-gradient-primary rounded-2xl flex items-center justify-center">
+                        <pillar.icon className="h-10 w-10 text-primary-foreground" />
+                      </div>
+                      <div className="space-y-4 flex-grow">
+                        <h3 className="text-xl font-semibold text-foreground">
+                          {pillar.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {pillar.description}
+                        </p>
+                      </div>
+                      <Link to={pillar.link}>
+                        <Button 
+                          variant="outline" 
+                          className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                        >
+                          Learn More
+                        </Button>
+                      </Link>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+          <p className="text-center text-xs text-muted-foreground mt-4">← Swipe to see more →</p>
         </div>
       </div>
     </section>

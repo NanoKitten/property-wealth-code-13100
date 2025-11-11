@@ -10,6 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import virtualCoaching from "@/assets/mary-virtual-coaching.jpg";
 import keynoteSpeaking from "@/assets/mary-keynote-speaking.jpg";
 import workshopEvent from "@/assets/mary-workshop-event.jpg";
@@ -391,8 +392,8 @@ const AboutMary = () => {
                 </div>
               </div>
 
-              {/* Right Achievements Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {/* Right Achievements - Desktop Grid */}
+              <div className="hidden md:grid md:grid-cols-2 gap-6">
                 {achievements.map((achievement, index) => (
                   <Card key={index} className="bg-background border-0 shadow-soft hover:shadow-elegant transition-all duration-300">
                     <CardContent className="p-6 text-center space-y-4">
@@ -411,18 +412,42 @@ const AboutMary = () => {
                   </Card>
                 ))}
               </div>
-            </div>
 
-            {/* Featured In Section */}
-            <div className="mt-20 text-center">
-              <p className="text-sm text-muted-foreground mb-8">As featured in</p>
-              <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-                <div className="text-lg font-semibold text-muted-foreground">Property Investor Today</div>
-                <div className="text-lg font-semibold text-muted-foreground">Women's Business Daily</div>
-                <div className="text-lg font-semibold text-muted-foreground">Financial Freedom Magazine</div>
-                <div className="text-lg font-semibold text-muted-foreground">Property Hub Podcast</div>
+              {/* Right Achievements - Mobile Carousel */}
+              <div className="md:hidden">
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: false,
+                  }}
+                  className="w-full"
+                >
+                  <CarouselContent className="-ml-2">
+                    {achievements.map((achievement, index) => (
+                      <CarouselItem key={index} className="pl-2 basis-[75%]">
+                        <Card className="bg-background border-0 shadow-soft text-center h-full">
+                          <CardContent className="p-6 space-y-4">
+                            <div className="w-16 h-16 mx-auto bg-gradient-primary rounded-2xl flex items-center justify-center">
+                              <achievement.icon className="h-8 w-8 text-primary-foreground" />
+                            </div>
+                            <div className="space-y-2">
+                              <h3 className="text-lg font-semibold text-foreground">
+                                {achievement.title}
+                              </h3>
+                              <p className="text-sm text-muted-foreground">
+                                {achievement.description}
+                              </p>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
+                <p className="text-center text-xs text-muted-foreground mt-3">← Swipe to see more →</p>
               </div>
             </div>
+
           </TabsContent>
 
           <TabsContent value="speaking">
