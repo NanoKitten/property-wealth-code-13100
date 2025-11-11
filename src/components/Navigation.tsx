@@ -1,6 +1,12 @@
 import { useState } from "react";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, X, Moon, Sun, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { useTheme } from "next-themes";
 
 const Navigation = () => {
@@ -10,10 +16,13 @@ const Navigation = () => {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About Mary", href: "/about-mary" },
+    { name: "Contact", href: "/#contact" },
+  ];
+
+  const unlockingSuccessItems = [
     { name: "Nervous System", href: "/nervous-system" },
     { name: "Bloodline", href: "/bloodline" },
     { name: "Belief System", href: "/belief-system" },
-    { name: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -39,6 +48,24 @@ const Navigation = () => {
                   {item.name}
                 </a>
               ))}
+              <DropdownMenu>
+                <DropdownMenuTrigger className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center gap-1">
+                  Unlocking Success
+                  <ChevronDown className="h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-background border-border">
+                  {unlockingSuccessItems.map((item) => (
+                    <DropdownMenuItem key={item.name} asChild>
+                      <a
+                        href={item.href}
+                        className="cursor-pointer text-foreground hover:text-primary"
+                      >
+                        {item.name}
+                      </a>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
 
@@ -107,6 +134,25 @@ const Navigation = () => {
                   {item.name}
                 </a>
               ))}
+              <DropdownMenu>
+                <DropdownMenuTrigger className="text-foreground hover:text-primary w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 flex items-center justify-between">
+                  Unlocking Success
+                  <ChevronDown className="h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-background border-border w-full">
+                  {unlockingSuccessItems.map((item) => (
+                    <DropdownMenuItem key={item.name} asChild>
+                      <a
+                        href={item.href}
+                        className="cursor-pointer text-foreground hover:text-primary"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </a>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
               <div className="pt-4 pb-2">
                 <Button 
                   variant="default" 
