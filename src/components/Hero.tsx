@@ -92,9 +92,9 @@ const Hero = () => {
       </section>
 
       {/* Content Below Video */}
-      <section className="bg-background py-6 md:py-12">
+      <section className="bg-background pb-6 md:pb-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="max-w-4xl mx-auto text-center space-y-4">
             <div className="space-y-6">
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
                 Discover your personalised 9-number Property Code and transform your financial future through strategic property investment – without sacrificing your family life.
