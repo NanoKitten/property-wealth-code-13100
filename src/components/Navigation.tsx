@@ -39,18 +39,18 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-baseline gap-6">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  className="text-foreground hover:text-primary px-2 py-2 text-sm font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </a>
               ))}
               <DropdownMenu>
-                <DropdownMenuTrigger className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center gap-1">
+                <DropdownMenuTrigger className="text-foreground hover:text-primary px-2 py-2 text-sm font-medium transition-colors duration-200 flex items-center gap-1">
                   Unlocking Success
                   <ChevronDown className="h-4 w-4" />
                 </DropdownMenuTrigger>
@@ -69,7 +69,7 @@ const Navigation = () => {
               </DropdownMenu>
               <a
                 href="/#contact"
-                className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200"
+                className="text-foreground hover:text-primary px-2 py-2 text-sm font-medium transition-colors duration-200"
               >
                 Contact
               </a>
