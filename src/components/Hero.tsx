@@ -27,9 +27,10 @@ const Hero = () => {
               maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
               WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
             }}>
-                <div className="flex items-center gap-6 whitespace-nowrap animate-scroll" style={{
+                <div className="inline-flex items-center gap-6 whitespace-nowrap animate-scroll" style={{
                 filter: 'blur(0.8px)'
               }}>
+                  {/* First set */}
                   <span className="text-xl md:text-2xl font-semibold text-black/90">Property Investment</span>
                   <span className="text-xl md:text-2xl text-black/40">|</span>
                   <span className="text-xl md:text-2xl font-semibold text-black/90">Financial Freedom</span>
@@ -50,7 +51,7 @@ const Hero = () => {
                   <span className="text-xl md:text-2xl text-black/40">|</span>
                   <span className="text-xl md:text-2xl font-semibold text-black/90">Life Balance</span>
                   <span className="text-xl md:text-2xl text-black/40">|</span>
-                  {/* Duplicate for seamless loop */}
+                  {/* Duplicate set for seamless loop */}
                   <span className="text-xl md:text-2xl font-semibold text-black/90">Property Investment</span>
                   <span className="text-xl md:text-2xl text-black/40">|</span>
                   <span className="text-xl md:text-2xl font-semibold text-black/90">Financial Freedom</span>
@@ -70,6 +71,7 @@ const Hero = () => {
                   <span className="text-xl md:text-2xl font-semibold text-black/90">Legacy Building</span>
                   <span className="text-xl md:text-2xl text-black/40">|</span>
                   <span className="text-xl md:text-2xl font-semibold text-black/90">Life Balance</span>
+                  <span className="text-xl md:text-2xl text-black/40">|</span>
                 </div>
               </div>
 
