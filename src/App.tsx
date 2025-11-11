@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes";
 import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import Projects from "./pages/Projects";
+import SpeakingMentoring from "./pages/SpeakingMentoring";
 import NervousSystem from "./pages/NervousSystem";
 import Bloodline from "./pages/Bloodline";
 import BeliefSystem from "./pages/BeliefSystem";
@@ -26,6 +27,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/speaking-mentoring" element={<SpeakingMentoring />} />
             <Route path="/about-mary" element={<AboutMaryTimeline />} />
             <Route path="/nervous-system" element={<NervousSystem />} />
             <Route path="/bloodline" element={<Bloodline />} />
