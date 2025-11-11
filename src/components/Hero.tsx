@@ -14,6 +14,9 @@ const Hero = () => {
         <div className="relative z-10 w-full px-6 lg:px-8 py-12">
           <div className="max-w-4xl mx-auto text-center">
             <div className="space-y-8">
+              <p className="text-primary font-medium tracking-wide uppercase text-sm">
+                For Women 40+ Ready to Build Wealth
+              </p>
             <h1 style={{
               filter: 'blur(0.6px)'
             }} className="text-4xl md:text-6xl font-serif text-black leading-tight font-extrabold lg:text-5xl">IN YOUR FAMILY
@@ -98,9 +101,6 @@ TO BUILD GENERATIONAL WEALTH<br />
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="space-y-6">
-              <p className="text-primary font-medium tracking-wide uppercase text-sm">
-                For Women 40+ Ready to Build Wealth
-              </p>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
                 Discover your personalised 9-number Property Code and transform your financial future through strategic property investment – without sacrificing your family life.
               </p>
