@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,36 @@ import maryZoomCoaching from "@/assets/timeline/mary-zoom-coaching.jpg";
 import maryWomenCommunity from "@/assets/timeline/mary-women-community.jpg";
 
 const AboutMaryTimeline = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observers = contentRefs.current.map((ref, index) => {
+      if (!ref) return null;
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveIndex(index);
+            }
+          });
+        },
+        {
+          threshold: 0.5,
+          rootMargin: "-20% 0px -20% 0px",
+        }
+      );
+      
+      observer.observe(ref);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer?.disconnect());
+    };
+  }, []);
+
   const timelineData = [
     {
       year: "1980s - Rural Ireland",
@@ -168,37 +199,63 @@ const AboutMaryTimeline = () => {
           <div className="grid md:grid-cols-[300px_1fr] gap-8 md:gap-16">
             {/* Left Column - Stacking Images */}
             <div className="relative h-full hidden md:block">
-              {timelineData.map((item, index) => (
-                <div
-                  key={index}
-                  className="relative mb-12 w-[300px] bg-background pb-2"
-                  style={{
-                    position: 'sticky',
-                    top: `${4 + index * 0.8}rem`,
-                    zIndex: timelineData.length - index,
-                    transform: `scale(${1 - index * 0.015})`,
-                  }}
-                >
-                  <div className="rounded-lg overflow-hidden shadow-elegant transition-all duration-500 ease-out">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full aspect-square object-cover"
-                    />
+              {timelineData.map((item, index) => {
+                const isActive = index === activeIndex;
+                const isPast = index < activeIndex;
+                
+                return (
+                  <div
+                    key={index}
+                    className="relative mb-12 w-[300px] bg-background pb-2"
+                    style={{
+                      position: 'sticky',
+                      top: `${4 + index * 0.8}rem`,
+                      zIndex: timelineData.length - index,
+                      transform: `scale(${isPast ? 0.95 : isActive ? 1 : 0.98}) translateY(${isPast ? -8 * (activeIndex - index) : 0}px)`,
+                      transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+                      opacity: isPast ? 0.7 : 1,
+                    }}
+                  >
+                    <div 
+                      className="rounded-lg overflow-hidden shadow-elegant transition-all duration-600 ease-out"
+                      style={{
+                        boxShadow: isActive 
+                          ? '0 20px 40px -10px rgba(var(--primary), 0.3)' 
+                          : '0 10px 20px -5px rgba(0, 0, 0, 0.1)',
+                      }}
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full aspect-square object-cover transition-transform duration-600"
+                        style={{
+                          transform: isActive ? 'scale(1.02)' : 'scale(1)',
+                        }}
+                      />
+                    </div>
+                    <div 
+                      className="mt-3 text-center bg-background/95 backdrop-blur-sm rounded-lg py-2 shadow-md transition-all duration-500"
+                      style={{
+                        transform: isActive ? 'scale(1.05)' : 'scale(1)',
+                      }}
+                    >
+                      <span className="text-2xl font-serif font-bold text-primary">
+                        {item.year}
+                      </span>
+                    </div>
                   </div>
-                  <div className="mt-3 text-center bg-background/95 backdrop-blur-sm rounded-lg py-2 shadow-md">
-                    <span className="text-2xl font-serif font-bold text-primary">
-                      {item.year}
-                    </span>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Right Column - Timeline Content */}
             <div className="space-y-16">
               {timelineData.map((item, index) => (
-                <div key={index} className="relative min-h-[350px] flex flex-col justify-start">
+                <div 
+                  key={index} 
+                  ref={(el) => (contentRefs.current[index] = el)}
+                  className="relative min-h-[350px] flex flex-col justify-start"
+                >
                   {/* Mobile Image */}
                   <div className="md:hidden mb-6 rounded-lg overflow-hidden shadow-elegant">
                     <img
