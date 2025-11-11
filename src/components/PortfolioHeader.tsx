@@ -10,8 +10,11 @@ import {
 
 type StyleVariant = "minimalist" | "bold" | "elegant" | "corporate" | "luxury" | "cards" | "gradient" | "timeline" | "stats";
 
-const PortfolioHeader = () => {
-  const [selectedStyle, setSelectedStyle] = useState<StyleVariant>("minimalist");
+interface PortfolioHeaderProps {
+  styleVariant?: StyleVariant;
+}
+
+const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) => {
 
   const renderMinimalist = () => (
     <section className="py-20 bg-background border-b border-border">
@@ -433,39 +436,17 @@ const PortfolioHeader = () => {
   );
 
   return (
-    <div className="relative">
-      {/* Style Selector */}
-      <div className="fixed top-20 right-6 z-50 bg-background/95 backdrop-blur-sm border border-border rounded-lg shadow-lg p-4">
-        <p className="text-xs text-muted-foreground mb-2 font-medium">Portfolio Style:</p>
-        <Select value={selectedStyle} onValueChange={(value) => setSelectedStyle(value as StyleVariant)}>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent className="bg-background border-border">
-            <SelectItem value="minimalist">Minimalist</SelectItem>
-            <SelectItem value="bold">Bold & Vibrant</SelectItem>
-            <SelectItem value="elegant">Elegant & Classic</SelectItem>
-            <SelectItem value="corporate">Modern Corporate</SelectItem>
-            <SelectItem value="luxury">Luxury Magazine</SelectItem>
-            <SelectItem value="cards">Dynamic Cards</SelectItem>
-            <SelectItem value="gradient">Gradient Hero</SelectItem>
-            <SelectItem value="timeline">Timeline Story</SelectItem>
-            <SelectItem value="stats">Stats Focused</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-
-      {/* Render selected style */}
-      {selectedStyle === "minimalist" && renderMinimalist()}
-      {selectedStyle === "bold" && renderBold()}
-      {selectedStyle === "elegant" && renderElegant()}
-      {selectedStyle === "corporate" && renderCorporate()}
-      {selectedStyle === "luxury" && renderLuxury()}
-      {selectedStyle === "cards" && renderCards()}
-      {selectedStyle === "gradient" && renderGradient()}
-      {selectedStyle === "timeline" && renderTimeline()}
-      {selectedStyle === "stats" && renderStats()}
-    </div>
+    <>
+      {styleVariant === "minimalist" && renderMinimalist()}
+      {styleVariant === "bold" && renderBold()}
+      {styleVariant === "elegant" && renderElegant()}
+      {styleVariant === "corporate" && renderCorporate()}
+      {styleVariant === "luxury" && renderLuxury()}
+      {styleVariant === "cards" && renderCards()}
+      {styleVariant === "gradient" && renderGradient()}
+      {styleVariant === "timeline" && renderTimeline()}
+      {styleVariant === "stats" && renderStats()}
+    </>
   );
 };
 
