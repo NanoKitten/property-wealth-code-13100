@@ -92,7 +92,7 @@ const Hero = () => {
       </section>
 
       {/* Content Below Video */}
-      <section className="bg-background pb-6 md:pb-12">
+      <section className="bg-background pb-6 md:pt-12 md:pb-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-4">
             <div className="space-y-6">
