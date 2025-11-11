@@ -14,12 +14,10 @@ const Hero = () => {
         <div className="relative z-10 w-full px-6 lg:px-8 py-12">
           <div className="max-w-4xl mx-auto text-center">
             <div className="space-y-8">
-              <p className="text-primary font-medium tracking-wide uppercase text-sm">
-                For Women 40+ Ready to Build Wealth
-              </p>
+              <p className="text-primary font-medium tracking-wide uppercase text-sm">FOR WOMAN OVER 35+ READY TO BECOME PROPERTY ENTREPRENEURS</p>
             <h1 style={{
               filter: 'blur(0.6px)'
-            }} className="text-4xl md:text-6xl font-serif text-black leading-tight font-extrabold lg:text-5xl">IN YOUR FAMILY
+            }} className="text-4xl md:text-6xl font-serif text-black leading-tight font-extrabold lg:text-5xl">IT'S TIME FOR WOMEN
 TO BUILD GENERATIONAL WEALTH<br />
               <span className="text-primary-dark">IT'S TIME FOR WOMEN</span><br />
               TO BUILD GENERATIONAL WEALTH
