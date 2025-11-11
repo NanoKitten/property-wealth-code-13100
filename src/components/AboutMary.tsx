@@ -414,17 +414,17 @@ const AboutMary = () => {
               </div>
 
               {/* Right Achievements - Mobile Carousel */}
-              <div className="md:hidden">
+              <div className="md:hidden max-w-full overflow-hidden">
                 <Carousel
                   opts={{
                     align: "start",
                     loop: false,
                   }}
-                  className="w-full"
+                  className="w-full max-w-full"
                 >
-                  <CarouselContent className="ml-0">
+                  <CarouselContent className="ml-0 max-w-full">
                     {achievements.map((achievement, index) => (
-                      <CarouselItem key={index} className="pl-2 basis-[75%] max-w-[75vw]">
+                      <CarouselItem key={index} className="pl-2 basis-[85vw] md:basis-[75%] max-w-[85vw]">
                         <Card className="bg-background border-0 shadow-soft text-center h-full">
                           <CardContent className="p-6 space-y-4">
                             <div className="w-16 h-16 mx-auto bg-gradient-primary rounded-2xl flex items-center justify-center">
