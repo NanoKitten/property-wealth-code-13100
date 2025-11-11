@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
+import Portfolio from "./pages/Portfolio";
 import NervousSystem from "./pages/NervousSystem";
 import Bloodline from "./pages/Bloodline";
 import BeliefSystem from "./pages/BeliefSystem";
@@ -24,6 +25,7 @@ const App = () => (
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/about-mary" element={<AboutMaryTimeline />} />
             <Route path="/nervous-system" element={<NervousSystem />} />
             <Route path="/bloodline" element={<Bloodline />} />
