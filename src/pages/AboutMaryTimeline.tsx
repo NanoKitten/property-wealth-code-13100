@@ -202,32 +202,35 @@ const AboutMaryTimeline = () => {
               {timelineData.map((item, index) => {
                 const isActive = index === activeIndex;
                 const isPast = index < activeIndex;
+                const isFuture = index > activeIndex;
                 
                 return (
                   <div
                     key={index}
-                    className="relative mb-12 w-[300px] bg-background pb-2"
+                    className="relative w-[300px]"
                     style={{
                       position: 'sticky',
-                      top: `${4 + index * 0.8}rem`,
-                      zIndex: timelineData.length - index,
-                      transform: `scale(${isPast ? 0.95 : isActive ? 1 : 0.98}) translateY(${isPast ? -8 * (activeIndex - index) : 0}px)`,
-                      transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
-                      opacity: isPast ? 0.7 : 1,
+                      top: isPast ? `${4}rem` : isFuture ? `${4 + (index - activeIndex) * 0.8}rem` : '4rem',
+                      zIndex: index + 1,
+                      transform: isPast 
+                        ? `translateY(${(index - activeIndex) * 4}px) scale(${0.98 - (activeIndex - index) * 0.01})` 
+                        : 'translateY(0) scale(1)',
+                      transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                      marginBottom: isFuture ? '3rem' : '0.5rem',
                     }}
                   >
                     <div 
-                      className="rounded-lg overflow-hidden shadow-elegant transition-all duration-600 ease-out"
+                      className="rounded-lg overflow-hidden transition-all duration-500"
                       style={{
                         boxShadow: isActive 
-                          ? '0 20px 40px -10px rgba(var(--primary), 0.3)' 
-                          : '0 10px 20px -5px rgba(0, 0, 0, 0.1)',
+                          ? '0 20px 50px -10px hsl(var(--primary) / 0.4)' 
+                          : '0 10px 30px -5px hsl(var(--primary) / 0.2)',
                       }}
                     >
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full aspect-square object-cover transition-transform duration-600"
+                        className="w-full aspect-square object-cover transition-transform duration-500"
                         style={{
                           transform: isActive ? 'scale(1.02)' : 'scale(1)',
                         }}
