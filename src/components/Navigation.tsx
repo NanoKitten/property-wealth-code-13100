@@ -90,7 +90,7 @@ const Navigation = () => {
               className="bg-gradient-primary hover:opacity-90 transition-opacity"
               asChild
             >
-              <a href="https://aistudio.google.com/app/apps/drive/1vITpYOLMNFvUUAYemhI3wJnaApha1j_J?showPreview=true&showAssistant=true" target="_blank" rel="noopener noreferrer">
+              <a href="https://v22-the-property-wealth-code-next-best-move-plan-806236894411.us-west1.run.app/" target="_blank" rel="noopener noreferrer">
                 Take the Quiz
               </a>
             </Button>
@@ -160,7 +160,7 @@ const Navigation = () => {
                   className="w-full bg-gradient-primary hover:opacity-90 transition-opacity"
                   asChild
                 >
-                  <a href="https://aistudio.google.com/app/apps/drive/1vITpYOLMNFvUUAYemhI3wJnaApha1j_J?showPreview=true&showAssistant=true" target="_blank" rel="noopener noreferrer">
+                  <a href="https://v22-the-property-wealth-code-next-best-move-plan-806236894411.us-west1.run.app/" target="_blank" rel="noopener noreferrer">
                     Take the Quiz
                   </a>
                 </Button>

@@ -80,7 +80,7 @@ const Hero = () => {
               filter: 'blur(0.5px)'
             }}>
                 <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity text-primary-foreground font-semibold px-8 py-4 shadow-elegant" asChild>
-                  <a href="https://aistudio.google.com/app/apps/drive/1vITpYOLMNFvUUAYemhI3wJnaApha1j_J?showPreview=true&showAssistant=true" target="_blank" rel="noopener noreferrer">
+                  <a href="https://v22-the-property-wealth-code-next-best-move-plan-806236894411.us-west1.run.app/" target="_blank" rel="noopener noreferrer">
                     Take the Quiz
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
