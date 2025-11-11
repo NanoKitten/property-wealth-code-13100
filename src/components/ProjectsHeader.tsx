@@ -279,8 +279,8 @@ const ProjectsHeader = ({ styleVariant = "minimalist" }: ProjectsHeaderProps) =>
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
         <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
       </div>
-      {/* Gradient blend to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent via-primary/30 to-background/80 z-20"></div>
+      {/* Gradient blend to next section - much softer transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-transparent via-transparent to-background z-20"></div>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="text-center text-primary-foreground">
           <h2 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">

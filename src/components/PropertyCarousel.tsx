@@ -118,7 +118,7 @@ const PropertyCarousel = ({ styleVariant = "minimalist" }: PropertyCarouselProps
       
       case "gradient":
         return {
-          section: "-mt-16 pt-32 pb-24 bg-gradient-to-br from-background/60 via-background to-primary/10 relative",
+          section: "-mt-32 pt-40 pb-24 bg-gradient-to-b from-transparent via-background/80 to-background relative",
           title: "text-5xl md:text-6xl font-bold text-foreground mb-4",
           subtitle: "text-xl text-foreground/80",
           card: "relative overflow-hidden rounded-2xl shadow-xl border-2 border-white/20 transition-all duration-300 group-hover:scale-[1.02]",
