@@ -14,7 +14,7 @@ import {
 type StyleVariant = "minimalist" | "bold" | "elegant" | "corporate" | "luxury" | "cards" | "gradient" | "timeline" | "stats";
 
 const Projects = () => {
-  const [selectedStyle, setSelectedStyle] = useState<StyleVariant>("minimalist");
+  const [selectedStyle, setSelectedStyle] = useState<StyleVariant>("gradient");
 
   return (
     <div className="min-h-screen bg-background">
