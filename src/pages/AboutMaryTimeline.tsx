@@ -171,22 +171,23 @@ const AboutMaryTimeline = () => {
               {timelineData.map((item, index) => (
                 <div
                   key={index}
-                  className="relative mb-24 w-[300px] bg-background pb-2"
+                  className="relative mb-12 w-[300px] bg-background pb-2"
                   style={{
                     position: 'sticky',
-                    top: `${6 + index * 1.2}rem`,
-                    zIndex: index + 1,
+                    top: `${4 + index * 0.8}rem`,
+                    zIndex: timelineData.length - index,
+                    transform: `scale(${1 - index * 0.015})`,
                   }}
                 >
-                  <div className="rounded-lg overflow-hidden shadow-elegant">
+                  <div className="rounded-lg overflow-hidden shadow-elegant transition-all duration-500 ease-out">
                     <img
                       src={item.image}
                       alt={item.title}
                       className="w-full aspect-square object-cover"
                     />
                   </div>
-                  <div className="mt-3 text-center">
-                    <span className="text-3xl font-serif font-bold text-primary">
+                  <div className="mt-3 text-center bg-background/95 backdrop-blur-sm rounded-lg py-2 shadow-md">
+                    <span className="text-2xl font-serif font-bold text-primary">
                       {item.year}
                     </span>
                   </div>
@@ -195,7 +196,7 @@ const AboutMaryTimeline = () => {
             </div>
 
             {/* Right Column - Timeline Content */}
-            <div className="space-y-24">
+            <div className="space-y-16">
               {timelineData.map((item, index) => (
                 <div key={index} className="relative min-h-[350px] flex flex-col justify-start">
                   {/* Mobile Image */}
