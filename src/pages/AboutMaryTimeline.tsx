@@ -201,50 +201,43 @@ const AboutMaryTimeline = () => {
             <div className="relative h-full hidden md:block">
               {timelineData.map((item, index) => {
                 const isActive = index === activeIndex;
-                const isPast = index < activeIndex;
-                const isFuture = index > activeIndex;
                 
                 return (
                   <div
                     key={index}
-                    className="relative w-[300px]"
                     style={{
                       position: 'sticky',
-                      top: isPast ? `${4}rem` : isFuture ? `${4 + (index - activeIndex) * 0.8}rem` : '4rem',
+                      top: '6rem',
                       zIndex: index + 1,
-                      transform: isPast 
-                        ? `translateY(${(index - activeIndex) * 4}px) scale(${0.98 - (activeIndex - index) * 0.01})` 
-                        : 'translateY(0) scale(1)',
-                      transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                      marginBottom: isFuture ? '3rem' : '0.5rem',
+                      marginBottom: index === timelineData.length - 1 ? '0' : '-280px',
                     }}
                   >
-                    <div 
-                      className="rounded-lg overflow-hidden transition-all duration-500"
-                      style={{
-                        boxShadow: isActive 
-                          ? '0 20px 50px -10px hsl(var(--primary) / 0.4)' 
-                          : '0 10px 30px -5px hsl(var(--primary) / 0.2)',
-                      }}
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full aspect-square object-cover transition-transform duration-500"
+                    <div className="w-[300px]">
+                      <div 
+                        className="rounded-lg overflow-hidden transition-all duration-500"
                         style={{
+                          boxShadow: isActive 
+                            ? '0 25px 50px -12px hsl(var(--primary) / 0.5)' 
+                            : '0 10px 30px -5px hsl(var(--primary) / 0.15)',
                           transform: isActive ? 'scale(1.02)' : 'scale(1)',
                         }}
-                      />
-                    </div>
-                    <div 
-                      className="mt-3 text-center bg-background/95 backdrop-blur-sm rounded-lg py-2 shadow-md transition-all duration-500"
-                      style={{
-                        transform: isActive ? 'scale(1.05)' : 'scale(1)',
-                      }}
-                    >
-                      <span className="text-2xl font-serif font-bold text-primary">
-                        {item.year}
-                      </span>
+                      >
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full aspect-square object-cover"
+                        />
+                      </div>
+                      <div 
+                        className="mt-3 text-center bg-background/95 backdrop-blur-sm rounded-lg py-2 shadow-md transition-all duration-500"
+                        style={{
+                          transform: isActive ? 'scale(1.05)' : 'scale(1)',
+                        }}
+                      >
+                        <span className="text-2xl font-serif font-bold text-primary">
+                          {item.year}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 );
