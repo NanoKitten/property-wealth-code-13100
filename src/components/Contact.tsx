@@ -72,7 +72,7 @@ const Contact = () => {
     {
       icon: Calendar,
       title: "Complete Property Debrief",
-      description: "Full consultation with Mary, personalised debriefing document, and beta access to Skool community",
+      description: "Full consultation with Mary, personalised debriefing document, and access to beta Skool community before public launch along with 3 Months free after launch",
       action: "Book Now - £195",
       primary: true
     },
