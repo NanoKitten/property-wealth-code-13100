@@ -199,49 +199,43 @@ const AboutMaryTimeline = () => {
           <div className="grid md:grid-cols-[300px_1fr] gap-8 md:gap-16">
             {/* Left Column - Stacking Images */}
             <div className="relative h-full hidden md:block">
-              {timelineData.map((item, index) => {
-                const isActive = index === activeIndex;
-                
-                return (
-                  <div
-                    key={index}
+              {timelineData.map((item, index) => (
+                <div
+                  key={index}
+                  className="w-[300px] mb-16"
+                  style={{
+                    position: 'sticky',
+                    top: '6rem',
+                    zIndex: index + 1,
+                  }}
+                >
+                  <div 
+                    className="rounded-lg overflow-hidden transition-all duration-500"
                     style={{
-                      position: 'sticky',
-                      top: '6rem',
-                      zIndex: index + 1,
-                      marginBottom: index === timelineData.length - 1 ? '0' : '-280px',
+                      boxShadow: index === activeIndex
+                        ? '0 25px 50px -12px hsl(var(--primary) / 0.5)' 
+                        : '0 10px 30px -5px hsl(var(--primary) / 0.15)',
+                      transform: index === activeIndex ? 'scale(1.02)' : 'scale(1)',
                     }}
                   >
-                    <div className="w-[300px]">
-                      <div 
-                        className="rounded-lg overflow-hidden transition-all duration-500"
-                        style={{
-                          boxShadow: isActive 
-                            ? '0 25px 50px -12px hsl(var(--primary) / 0.5)' 
-                            : '0 10px 30px -5px hsl(var(--primary) / 0.15)',
-                          transform: isActive ? 'scale(1.02)' : 'scale(1)',
-                        }}
-                      >
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="w-full aspect-square object-cover"
-                        />
-                      </div>
-                      <div 
-                        className="mt-3 text-center bg-background/95 backdrop-blur-sm rounded-lg py-2 shadow-md transition-all duration-500"
-                        style={{
-                          transform: isActive ? 'scale(1.05)' : 'scale(1)',
-                        }}
-                      >
-                        <span className="text-2xl font-serif font-bold text-primary">
-                          {item.year}
-                        </span>
-                      </div>
-                    </div>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full aspect-square object-cover"
+                    />
                   </div>
-                );
-              })}
+                  <div 
+                    className="mt-3 text-center bg-background/95 backdrop-blur-sm rounded-lg py-2 shadow-md transition-all duration-500"
+                    style={{
+                      transform: index === activeIndex ? 'scale(1.05)' : 'scale(1)',
+                    }}
+                  >
+                    <span className="text-2xl font-serif font-bold text-primary">
+                      {item.year}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* Right Column - Timeline Content */}
