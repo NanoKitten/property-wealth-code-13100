@@ -14,7 +14,7 @@ const SpeakingMentoring = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="space-y-12">
             <div className="relative overflow-hidden rounded-3xl h-[600px]">
-              <img src={speakingEvent} alt="Interactive workshops" className="w-full h-full object-cover object-[70%_center] scale-[2]" />
+              <img src={speakingEvent} alt="Interactive workshops" className="w-full h-full object-cover object-[70%_center] scale-[2] -scale-x-100" />
               <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent flex items-center">
                 <div className="max-w-2xl p-12 text-primary-foreground space-y-6">
                   <h1 className="text-5xl md:text-6xl font-bold">Transform Your Financial Future</h1>
