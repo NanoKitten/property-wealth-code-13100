@@ -55,11 +55,12 @@ const AboutMary = () => {
               <Button 
                 size="lg" 
                 className="bg-gradient-primary hover:opacity-90 transition-opacity text-primary-foreground font-semibold px-8"
+                asChild
               >
-                Learn My Story
+                <a href="/about-mary">Learn My Story</a>
               </Button>
-              <Button variant="outline" size="lg" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8">
-                See My Portfolio
+              <Button variant="outline" size="lg" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8" asChild>
+                <a href="/projects">See My Portfolio</a>
               </Button>
             </div>
           </div>
