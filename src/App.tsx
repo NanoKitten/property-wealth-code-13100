@@ -11,6 +11,7 @@ import NervousSystem from "./pages/NervousSystem";
 import Bloodline from "./pages/Bloodline";
 import BeliefSystem from "./pages/BeliefSystem";
 import AboutMaryTimeline from "./pages/AboutMaryTimeline";
+import MarysLife from "./pages/MarysLife";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/about-mary" element={<AboutMaryTimeline />} />
+            <Route path="/marys-life" element={<MarysLife />} />
             <Route path="/nervous-system" element={<NervousSystem />} />
             <Route path="/bloodline" element={<Bloodline />} />
             <Route path="/belief-system" element={<BeliefSystem />} />
