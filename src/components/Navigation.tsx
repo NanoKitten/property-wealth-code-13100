@@ -18,7 +18,6 @@ const Navigation = () => {
     { name: "About Mary", href: "/about-mary" },
     { name: "Projects", href: "/projects" },
     { name: "Speaking & Mentoring", href: "/speaking-mentoring" },
-    { name: "Contact", href: "/#contact" },
   ];
 
   const unlockingSuccessItems = [
@@ -68,6 +67,12 @@ const Navigation = () => {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
+              <a
+                href="/#contact"
+                className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200"
+              >
+                Contact
+              </a>
             </div>
           </div>
 
@@ -155,6 +160,13 @@ const Navigation = () => {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
+              <a
+                href="/#contact"
+                className="text-foreground hover:text-primary block px-3 py-2 text-base font-medium transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
+              </a>
               <div className="pt-4 pb-2">
                 <Button 
                   variant="default" 
