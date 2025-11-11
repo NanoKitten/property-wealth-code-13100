@@ -14,7 +14,7 @@ const Hero = () => {
         <div className="relative z-10 w-full px-6 lg:px-8 py-12">
           <div className="max-w-4xl mx-auto text-center">
             <div className="space-y-8">
-              <p className="text-primary font-medium tracking-wide uppercase text-sm">FOR WOMAN OVER 35+ READY TO BECOME PROPERTY ENTREPRENEURS</p>
+              <p className="text-black font-medium tracking-wide uppercase text-sm">FOR WOMAN OVER 35+ READY TO BECOME PROPERTY ENTREPRENEURS</p>
               <h1 style={{
               filter: 'blur(0.6px)'
             }} className="text-4xl md:text-6xl font-serif text-black leading-tight font-extrabold lg:text-5xl">
