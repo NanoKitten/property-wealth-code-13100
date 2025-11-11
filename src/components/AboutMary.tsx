@@ -152,8 +152,8 @@ const AboutMary = () => {
         <p className="text-xl text-muted-foreground">Inspiring women at events worldwide</p>
       </div>
 
-      <div className="relative">
-        <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+      <div className="relative max-w-full">
+        <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide max-w-full">
           {speakingPhotos.map((photo, index) => (
             <div key={index} className="flex-shrink-0 w-full md:w-2/3 snap-center">
               <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
@@ -349,7 +349,7 @@ const AboutMary = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-secondary/30">
+    <section id="about" className="py-20 bg-secondary/30 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <Tabs defaultValue="about" className="w-full">
           <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
@@ -422,9 +422,9 @@ const AboutMary = () => {
                   }}
                   className="w-full"
                 >
-                  <CarouselContent className="-ml-2">
+                  <CarouselContent className="ml-0">
                     {achievements.map((achievement, index) => (
-                      <CarouselItem key={index} className="pl-2 basis-[75%]">
+                      <CarouselItem key={index} className="pl-2 basis-[75%] max-w-[75vw]">
                         <Card className="bg-background border-0 shadow-soft text-center h-full">
                           <CardContent className="p-6 space-y-4">
                             <div className="w-16 h-16 mx-auto bg-gradient-primary rounded-2xl flex items-center justify-center">

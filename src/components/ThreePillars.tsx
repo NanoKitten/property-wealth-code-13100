@@ -27,7 +27,7 @@ const ThreePillars = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-secondary/30">
+    <section className="py-20 bg-gradient-to-b from-background to-secondary/30 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl md:text-5xl font-serif font-semibold text-foreground leading-tight">
@@ -82,9 +82,9 @@ const ThreePillars = () => {
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-2">
+            <CarouselContent className="ml-0">
               {pillars.map((pillar, index) => (
-                <CarouselItem key={index} className="pl-2 basis-[85%]">
+                <CarouselItem key={index} className="pl-2 basis-[85%] max-w-[85vw]">
                   <Card className="bg-background border-0 shadow-soft h-full">
                     <CardContent className="p-8 space-y-6 h-full flex flex-col">
                       <div className="w-20 h-20 bg-gradient-primary rounded-2xl flex items-center justify-center">

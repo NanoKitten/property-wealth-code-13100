@@ -91,7 +91,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-secondary/20">
+    <section id="contact" className="py-20 bg-secondary/20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
@@ -119,7 +119,7 @@ const Contact = () => {
                     </div>
                     <div className="flex-1">
                       <CardTitle className="text-lg text-foreground">{method.title}</CardTitle>
-                      <p className="text-sm text-muted-foreground">{method.description}</p>
+                      <p className="text-sm text-muted-foreground break-words">{method.description}</p>
                     </div>
                   </CardHeader>
                   <CardContent className="pt-0">

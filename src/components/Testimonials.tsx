@@ -94,7 +94,7 @@ const Testimonials = () => {
 
   // Layout 2: Carousel
   const renderCarouselLayout = () => (
-    <div className="relative mb-16">
+    <div className="relative mb-16 overflow-hidden">
       <div className="overflow-hidden">
         <div 
           className="flex transition-transform duration-500 ease-out"
@@ -245,12 +245,12 @@ const Testimonials = () => {
 
   // Layout 5: Horizontal Scroll
   const renderHorizontalScrollLayout = () => (
-    <div className="mb-16">
-      <div className="flex gap-3 md:gap-6 overflow-x-auto pb-4 md:pb-6 snap-x snap-mandatory scrollbar-hide">
+    <div className="mb-16 max-w-full">
+      <div className="flex gap-3 md:gap-6 overflow-x-auto pb-4 md:pb-6 snap-x snap-mandatory scrollbar-hide max-w-full">
         {testimonials.map((testimonial, index) => (
           <Card 
             key={index} 
-            className="flex-shrink-0 w-[280px] md:w-[400px] snap-center bg-gradient-hero border-0 shadow-elegant"
+            className="flex-shrink-0 w-[280px] md:w-[400px] max-w-[90vw] snap-center bg-gradient-hero border-0 shadow-elegant"
           >
             <CardContent className="p-5 md:p-8 space-y-4 md:space-y-6 h-full flex flex-col">
               <div className="flex justify-between items-start">
@@ -300,7 +300,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-background">
+    <section id="testimonials" className="py-20 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center space-y-4 mb-12">

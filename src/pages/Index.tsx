@@ -6,6 +6,7 @@ import ThreePillars from "@/components/ThreePillars";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import FloatingCTA from "@/components/FloatingCTA";
 import { trackPageView } from "@/lib/analytics";
 
 const Index = () => {
@@ -22,6 +23,7 @@ const Index = () => {
       <Testimonials />
       <Contact />
       <Footer />
+      <FloatingCTA />
     </div>
   );
 };
