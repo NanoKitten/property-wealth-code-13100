@@ -11,7 +11,7 @@ const Hero = () => {
           <div className="absolute inset-0 bg-background/40 md:bg-background/30 backdrop-blur-[3px] md:backdrop-blur-[2px]"></div>
         </div>
 
-        <div className="relative z-10 w-full px-6 lg:px-8 py-12">
+        <div className="relative z-10 w-full px-6 lg:px-8 py-6 md:py-12">
           <div className="max-w-4xl mx-auto text-center">
             <div className="space-y-8">
               <p className="text-black font-medium tracking-wide uppercase text-sm break-words">FOR WOMAN OVER 35+ READY TO BECOME PROPERTY ENTREPRENEURS</p>
