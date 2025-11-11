@@ -94,7 +94,7 @@ const ProjectsHeader = ({ styleVariant = "minimalist" }: ProjectsHeaderProps) =>
     <section className="py-24 bg-background relative">
       <div className="absolute inset-0 bg-gradient-to-b from-muted/30 to-background"></div>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-block mb-6">
               <div className="h-px w-16 bg-primary mb-4"></div>
@@ -157,7 +157,7 @@ const ProjectsHeader = ({ styleVariant = "minimalist" }: ProjectsHeaderProps) =>
   const renderCorporate = () => (
     <section className="py-16 bg-background border-b-2 border-primary/20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-8 items-start">
+        <div className="grid lg:grid-cols-3 gap-8 items-start">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-1 w-12 bg-primary"></div>
@@ -209,7 +209,7 @@ const ProjectsHeader = ({ styleVariant = "minimalist" }: ProjectsHeaderProps) =>
           </h2>
           <p className="text-2xl text-primary font-light tracking-wide">Est. 2008</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
           <div className="text-center">
             <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
               <Sparkles className="w-10 h-10 text-primary" />
@@ -243,7 +243,7 @@ const ProjectsHeader = ({ styleVariant = "minimalist" }: ProjectsHeaderProps) =>
           <h2 className="text-5xl font-bold text-foreground mb-4">Investment Projects Overview</h2>
           <p className="text-xl text-muted-foreground">Building wealth through strategic property investments</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid lg:grid-cols-3 gap-6">
           <div className="bg-background border border-border rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1 transition-transform">
             <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
               <Building2 className="w-8 h-8 text-primary" />

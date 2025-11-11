@@ -87,7 +87,7 @@ const TransformationStory = ({ variant }: TransformationStoryProps) => {
               <p className="text-xl text-primary font-semibold mb-4">{storyData.before.subtitle}</p>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{storyData.before.description}</p>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid lg:grid-cols-3 gap-6">
               {storyData.before.images.map((img, idx) => (
                 <div key={idx} className="group relative overflow-hidden rounded-2xl shadow-lg hover-scale cursor-pointer">
                   <img 
@@ -112,7 +112,7 @@ const TransformationStory = ({ variant }: TransformationStoryProps) => {
               <p className="text-xl text-primary font-semibold mb-4">{storyData.during.subtitle}</p>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{storyData.during.description}</p>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid lg:grid-cols-3 gap-6">
               {storyData.during.images.map((img, idx) => (
                 <div key={idx} className="group relative overflow-hidden rounded-2xl shadow-lg hover-scale cursor-pointer">
                   <img 
@@ -137,7 +137,7 @@ const TransformationStory = ({ variant }: TransformationStoryProps) => {
               <p className="text-xl text-primary font-semibold mb-4">{storyData.after.subtitle}</p>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{storyData.after.description}</p>
             </div>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid lg:grid-cols-2 gap-6">
               {storyData.after.images.map((img, idx) => (
                 <div key={idx} className="group relative overflow-hidden rounded-2xl shadow-lg hover-scale cursor-pointer">
                   <img 
@@ -219,7 +219,7 @@ const TransformationStory = ({ variant }: TransformationStoryProps) => {
               <h3 className="text-2xl font-bold text-accent-foreground mb-2">{storyData.during.title}</h3>
               <p className="text-muted-foreground max-w-3xl mx-auto">{storyData.during.description}</p>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid lg:grid-cols-3 gap-6">
               {storyData.during.images.map((img, idx) => (
                 <div key={idx} className="relative overflow-hidden rounded-2xl shadow-lg">
                   <img src={img.src} alt={img.alt} className="w-full h-80 object-cover" />
@@ -311,7 +311,7 @@ const TransformationStory = ({ variant }: TransformationStoryProps) => {
             <CarouselContent>
               {carouselSlides.map((slide, idx) => (
                 <CarouselItem key={idx}>
-                  <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div className="grid lg:grid-cols-2 gap-8 items-center">
                     <div className="relative overflow-hidden rounded-2xl shadow-xl">
                       <img src={slide.image.src} alt={slide.image.alt} className="w-full h-[500px] object-cover" />
                     </div>
@@ -329,8 +329,8 @@ const TransformationStory = ({ variant }: TransformationStoryProps) => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
+            <CarouselPrevious className="hidden lg:flex" />
+            <CarouselNext className="hidden lg:flex" />
           </Carousel>
 
           {/* Progress Indicator */}
@@ -369,7 +369,7 @@ const TransformationStory = ({ variant }: TransformationStoryProps) => {
             <div className="mb-16">
               <h2 className="text-4xl font-bold text-foreground mb-4">{storyData.before.title}: {storyData.before.subtitle}</h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{storyData.before.description}</p>
-              <div className="grid md:grid-cols-3 gap-4 mb-8">
+              <div className="grid lg:grid-cols-3 gap-4 mb-8">
                 {storyData.before.images.map((img, idx) => (
                   <img key={idx} src={img.src} alt={img.alt} className="rounded-xl shadow-lg w-full h-64 object-cover" />
                 ))}
@@ -380,7 +380,7 @@ const TransformationStory = ({ variant }: TransformationStoryProps) => {
             <div className="mb-16">
               <h2 className="text-4xl font-bold text-foreground mb-4">{storyData.during.title}: {storyData.during.subtitle}</h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{storyData.during.description}</p>
-              <div className="grid md:grid-cols-3 gap-4 mb-8">
+              <div className="grid lg:grid-cols-3 gap-4 mb-8">
                 {storyData.during.images.map((img, idx) => (
                   <img key={idx} src={img.src} alt={img.alt} className="rounded-xl shadow-lg w-full h-64 object-cover" />
                 ))}
@@ -391,7 +391,7 @@ const TransformationStory = ({ variant }: TransformationStoryProps) => {
             <div className="mb-16">
               <h2 className="text-4xl font-bold text-foreground mb-4">{storyData.after.title}: {storyData.after.subtitle}</h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{storyData.after.description}</p>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid lg:grid-cols-2 gap-4">
                 {storyData.after.images.map((img, idx) => (
                   <img key={idx} src={img.src} alt={img.alt} className="rounded-xl shadow-lg w-full h-80 object-cover" />
                 ))}

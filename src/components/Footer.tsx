@@ -31,7 +31,7 @@ const Footer = () => {
     <footer className="bg-accent/30 border-t border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-16 grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+        <div className="py-16 grid lg:grid-cols-4 gap-8">
           {/* Brand Column */}
           <div className="space-y-6">
             <div>
@@ -125,7 +125,7 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="py-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <div className="text-sm text-muted-foreground">
               © 2024 The Property Wealth Code. All rights reserved.

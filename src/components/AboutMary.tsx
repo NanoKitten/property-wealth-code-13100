@@ -66,7 +66,7 @@ const AboutMary = () => {
           </div>
 
           {/* Right Achievements - Desktop Grid */}
-          <div className="hidden md:grid md:grid-cols-2 gap-6">
+          <div className="hidden lg:grid lg:grid-cols-2 gap-6">
             {achievements.map((achievement, index) => (
               <Card key={index} className="bg-background border-0 shadow-soft hover:shadow-elegant transition-all duration-300">
                 <CardContent className="p-6 text-center space-y-4">
@@ -87,7 +87,7 @@ const AboutMary = () => {
           </div>
 
           {/* Right Achievements - Mobile Carousel */}
-          <div className="md:hidden max-w-full overflow-hidden">
+          <div className="lg:hidden max-w-full overflow-hidden">
             <Carousel
               opts={{
                 align: "start",

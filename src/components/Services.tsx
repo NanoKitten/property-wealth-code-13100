@@ -141,7 +141,7 @@ const Services = () => {
                 )}
               </div>
               
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid lg:grid-cols-2 gap-8">
                 {category.services.map((service, index) => (
                   <Card key={index} className="relative overflow-hidden bg-background border-0 shadow-soft hover:shadow-elegant transition-all duration-300 group">
                     <CardHeader className="space-y-4">

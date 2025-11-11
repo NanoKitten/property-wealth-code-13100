@@ -47,7 +47,7 @@ const Testimonials = () => {
         </div>
 
         {/* Featured Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
           <div className="lg:col-span-2">
             <Card className="bg-gradient-hero border-0 shadow-elegant h-full">
               <CardContent className="p-6 md:p-12 space-y-4 md:space-y-6">
@@ -90,7 +90,7 @@ const Testimonials = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 text-center">
           <div className="space-y-1 md:space-y-2">
             <div className="text-2xl md:text-3xl lg:text-4xl font-bold font-serif text-primary">500+</div>
             <p className="text-xs md:text-sm text-muted-foreground">Women Coached</p>

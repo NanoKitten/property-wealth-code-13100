@@ -45,7 +45,7 @@ const ThreePillars = () => {
         </div>
 
         {/* Desktop: Grid Layout */}
-        <div className="hidden md:grid md:grid-cols-3 gap-8">
+        <div className="hidden lg:grid lg:grid-cols-3 gap-8">
           {pillars.map((pillar, index) => (
             <Card key={index} className="bg-background border-0 shadow-soft hover:shadow-elegant transition-all duration-300 group">
               <CardContent className="p-8 space-y-6 h-full flex flex-col">
@@ -74,7 +74,7 @@ const ThreePillars = () => {
         </div>
 
         {/* Mobile: Carousel */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Carousel
             opts={{
               align: "start",
