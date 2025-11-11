@@ -89,6 +89,15 @@ All colors MUST be HSL.
     will-change: transform;
   }
 
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
   .dark {
     --background: 252 28% 12%;
     --foreground: 285 19% 92%;
