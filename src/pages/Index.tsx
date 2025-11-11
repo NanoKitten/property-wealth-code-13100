@@ -6,11 +6,11 @@ import ThreePillars from "@/components/ThreePillars";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import { analytics } from "@/lib/analytics";
+import { trackPageView } from "@/lib/analytics";
 
 const Index = () => {
   useEffect(() => {
-    analytics.pageView('/');
+    trackPageView('home');
   }, []);
 
   return (

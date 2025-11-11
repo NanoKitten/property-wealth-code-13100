@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import { analytics } from "@/lib/analytics";
+import { trackFormSubmission, trackButtonClick } from "@/lib/analytics";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -39,7 +39,7 @@ const Contact = () => {
 
       if (error) throw error;
 
-      analytics.formSubmit('contact_form', true);
+      trackFormSubmission('contact_form', true);
       
       toast({
         title: "Message sent!",
@@ -57,7 +57,7 @@ const Contact = () => {
       });
     } catch (error) {
       console.error('Error submitting form:', error);
-      analytics.formSubmit('contact_form', false);
+      trackFormSubmission('contact_form', false);
       toast({
         title: "Something went wrong",
         description: "Please try again or email directly.",
@@ -124,6 +124,7 @@ const Contact = () => {
                   </CardHeader>
                   <CardContent className="pt-0">
                     <Button 
+                      onClick={() => trackButtonClick(method.action, 'contact_methods')}
                       className={`w-full ${method.primary ? 'bg-gradient-primary hover:opacity-90 text-primary-foreground' : 'bg-accent hover:bg-accent/80 text-accent-foreground'} transition-all font-semibold`}
                       size="lg"
                     >
