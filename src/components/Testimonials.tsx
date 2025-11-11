@@ -10,52 +10,20 @@ const Testimonials = () => {
   
   const testimonials = [
     {
-      name: "Sarah Mitchell",
-      title: "Marketing Director & Mum of 2",
-      location: "Manchester",
+      name: "Michael Kinsella",
+      title: "Jan 2025",
+      location: "",
       rating: 5,
-      text: "Mary's Property Code revealed exactly why my previous attempts failed. Within 6 months, I completed my first BTL purchase and it's already producing 8% returns. The personalised approach made all the difference.",
-      result: "First property purchased in 6 months"
+      text: "The Property Code experience was remarkable. I never thought I would gain so much value from the 2 sessions. Mary was excellent in her explanations of my identity. From 8 or so questions, she understood my primary personality, my high stress state and growth personality. Using Mary's technics, I am already trying to become more aware and neutralize the impact of my primary personality and high stress state to allow fast-track growth in my property business and the rest of life. Mary is an extremely supportive mentor and has a vast array of experience.",
+      result: "Life-changing insights"
     },
     {
-      name: "Emma Thompson",
-      title: "Business Owner",
-      location: "Birmingham", 
-      rating: 5,
-      text: "I was overwhelmed by all the property 'strategies' out there. Mary's test showed me my exact numbers and I finally had clarity. Now I own 3 properties and my portfolio value has grown by £150k.",
-      result: "£150k portfolio growth"
-    },
-    {
-      name: "Lisa Chen",
-      title: "Teacher & Property Investor", 
+      name: "Mary N.",
+      title: "",
       location: "London",
       rating: 5,
-      text: "The community support is incredible. Having Mary and other women on the same journey means I never feel alone. My confidence has skyrocketed and so has my property knowledge.",
-      result: "Confidence transformed"
-    },
-    {
-      name: "Rebecca Jones",
-      title: "HR Manager",
-      location: "Leeds",
-      rating: 5,
-      text: "Mary helped me structure a deal I thought was impossible. Her creative financing advice meant I could purchase without a huge deposit. The property is now worth £40k more than I paid!",
-      result: "£40k instant equity"
-    },
-    {
-      name: "Amanda Wilson",
-      title: "Freelance Consultant",
-      location: "Bristol",
-      rating: 5,
-      text: "The VIP program changed everything. Mary's hands-on support meant I went from complete beginner to owning 2 properties in 3 months. Her expertise saved me from costly mistakes.",
-      result: "2 properties in 3 months"
-    },
-    {
-      name: "Kate Morrison",
-      title: "Accountant & Mum",
-      location: "Edinburgh",
-      rating: 5,
-      text: "I loved that Mary understands the family balance. Her strategies worked around my commitments, not against them. I'm building wealth without sacrificing time with my children.",
-      result: "Perfect work-life balance"
+      text: "I have taken a couple of sessions with Mary and I must say it has been an eye opening, thought provoking awakening. It has been more than I expected. If you don't know why you're stuck or not flowing in business/life, Mary's sessions WILL wake you up to the why. She is lovely and I would highly recommend her, if you want to make a change.",
+      result: "Eye-opening awakening"
     }
   ];
 
