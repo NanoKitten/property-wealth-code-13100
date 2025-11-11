@@ -6,7 +6,7 @@ const Hero = () => {
       <section id="home" className="relative w-full pt-16 min-h-[85vh] flex items-start md:items-center overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0 z-0 h-full min-h-[100vh] md:min-h-full">
-          <iframe title="vimeo-player" src="https://player.vimeo.com/video/1129536015?h=180320caca&autoplay=1&loop=1&muted=1&controls=0&background=1" className="w-full h-[150%] md:h-[130%] absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[250%] md:min-w-[150%] object-cover scale-110" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowFullScreen />
+          <iframe title="vimeo-player" src="https://player.vimeo.com/video/1129536015?h=180320caca&autoplay=1&loop=1&muted=1&controls=0&background=1" className="w-full h-[150%] md:h-[130%] absolute top-[35%] md:top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[250%] md:min-w-[150%] object-cover scale-110" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowFullScreen />
           {/* Enhanced overlay for mobile */}
           <div className="absolute inset-0 bg-background/40 md:bg-background/30 backdrop-blur-[3px] md:backdrop-blur-[2px]"></div>
         </div>
