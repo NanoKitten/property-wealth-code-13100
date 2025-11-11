@@ -4,14 +4,76 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+import { analytics } from "@/lib/analytics";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: ""
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert({
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          email: formData.email,
+          phone: formData.phone || null,
+          subject: formData.subject,
+          message: formData.message
+        });
+
+      if (error) throw error;
+
+      analytics.formSubmit('contact_form', true);
+      
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. Mary will get back to you within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      analytics.formSubmit('contact_form', false);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or email directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const contactMethods = [
     {
       icon: Calendar,
-      title: "Book a Strategy Call",
-      description: "45-minute deep dive into your property goals",
-      action: "Book Now - £35",
+      title: "Complete Property Debrief",
+      description: "Full consultation with Mary, personalised debriefing document, and beta access to Skool community",
+      action: "Book Now - £195",
       primary: true
     },
     {
@@ -107,58 +169,93 @@ const Contact = () => {
                 </p>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="Your first name" />
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="firstName">First Name</Label>
+                      <Input 
+                        id="firstName" 
+                        placeholder="Your first name"
+                        value={formData.firstName}
+                        onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="lastName">Last Name</Label>
+                      <Input 
+                        id="lastName" 
+                        placeholder="Your last name"
+                        value={formData.lastName}
+                        onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
+                        required
+                      />
+                    </div>
                   </div>
+                  
                   <div className="space-y-2">
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Your last name" />
+                    <Label htmlFor="email">Email Address</Label>
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      placeholder="your.email@example.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                      required
+                    />
                   </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email Address</Label>
-                  <Input id="email" type="email" placeholder="your.email@example.com" />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number (Optional)</Label>
-                  <Input id="phone" type="tel" placeholder="+44 7XXX XXXXXX" />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="subject">What are you interested in?</Label>
-                  <select 
-                    id="subject" 
-                    className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Phone Number (Optional)</Label>
+                    <Input 
+                      id="phone" 
+                      type="tel" 
+                      placeholder="+44 7XXX XXXXXX"
+                      value={formData.phone}
+                      onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="subject">What are you interested in?</Label>
+                    <select 
+                      id="subject" 
+                      className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                      value={formData.subject}
+                      onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
+                      required
+                    >
+                      <option value="">Select an option</option>
+                      <option value="debrief">Complete Property Debrief (£195)</option>
+                      <option value="property-code">Property Code Test (£250)</option>
+                      <option value="community">Monthly Community (£97)</option>
+                      <option value="coaching">1:1 Coaching Programs</option>
+                      <option value="other">Other Inquiry</option>
+                    </select>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea 
+                      id="message" 
+                      placeholder="Tell me about your property goals and how I can help..."
+                      rows={4}
+                      value={formData.message}
+                      onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                      required
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit"
+                    size="lg" 
+                    className="w-full bg-gradient-primary hover:opacity-90 transition-opacity text-primary-foreground font-semibold"
+                    disabled={isSubmitting}
                   >
-                    <option value="">Select an option</option>
-                    <option value="strategy-call">Property Strategy Call (£35)</option>
-                    <option value="property-code">Property Code Test (£250)</option>
-                    <option value="community">Monthly Community (£97)</option>
-                    <option value="coaching">1:1 Coaching Programs</option>
-                    <option value="other">Other Inquiry</option>
-                  </select>
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Tell me about your property goals and how I can help..."
-                    rows={4}
-                  />
-                </div>
-                
-                <Button 
-                  size="lg" 
-                  className="w-full bg-gradient-primary hover:opacity-90 transition-opacity text-primary-foreground font-semibold"
-                >
-                  Send Message
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </form>
                 
                 <p className="text-xs text-muted-foreground text-center">
                   I respect your privacy. Your information will never be shared and you can unsubscribe at any time.
