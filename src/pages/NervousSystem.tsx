@@ -44,7 +44,7 @@ const NervousSystem = () => {
             </section>
 
             {/* Key Sections */}
-            <div className="grid md:grid-cols-2 gap-6 my-12">
+            <div className="grid md:grid-cols-2 gap-6 my-12 clear-both">
               <div className="p-6 bg-secondary/30 rounded-xl space-y-3">
                 <Heart className="h-8 w-8 text-primary" />
                 <h3 className="text-xl font-semibold text-foreground">Nervous System as Success Foundation</h3>
