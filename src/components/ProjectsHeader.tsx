@@ -282,7 +282,7 @@ const ProjectsHeader = ({ styleVariant = "minimalist" }: ProjectsHeaderProps) =>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="text-center text-primary-foreground">
           <h2 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
-            Mary's Investment Projects
+            Mary's Projects
           </h2>
           <p className="text-2xl mb-12 opacity-90 max-w-3xl mx-auto">
             Over 15 years of building sustainable wealth through strategic property investments
