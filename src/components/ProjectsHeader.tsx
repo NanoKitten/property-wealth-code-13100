@@ -10,21 +10,21 @@ import {
 
 type StyleVariant = "minimalist" | "bold" | "elegant" | "corporate" | "luxury" | "cards" | "gradient" | "timeline" | "stats";
 
-interface PortfolioHeaderProps {
+interface ProjectsHeaderProps {
   styleVariant?: StyleVariant;
 }
 
-const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) => {
+const ProjectsHeader = ({ styleVariant = "minimalist" }: ProjectsHeaderProps) => {
 
   const renderMinimalist = () => (
     <section className="py-20 bg-background border-b border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl">
           <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">
-            Portfolio Showcase
+            Projects Showcase
           </p>
           <h2 className="text-4xl md:text-5xl font-light text-foreground mb-6 leading-tight">
-            Mary's Property Portfolio
+            Mary's Property Projects
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
             A carefully curated collection of successful property investments, 
@@ -37,7 +37,7 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
             </div>
             <div>
               <p className="text-3xl font-light text-primary">£2M+</p>
-              <p className="text-sm text-muted-foreground">Portfolio Value</p>
+              <p className="text-sm text-muted-foreground">Total Value</p>
             </div>
             <div>
               <p className="text-3xl font-light text-primary">20+</p>
@@ -59,7 +59,7 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
         <div className="text-center">
           <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-2 rounded-full mb-6">
             <Award className="w-4 h-4" />
-            <span className="text-sm font-semibold uppercase tracking-wide">Award-Winning Portfolio</span>
+            <span className="text-sm font-semibold uppercase tracking-wide">Award-Winning Projects</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
             Transform Your Financial Future
@@ -82,7 +82,7 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
             <div className="bg-background/80 backdrop-blur-sm px-8 py-6 rounded-2xl shadow-lg border border-border">
               <Award className="w-8 h-8 text-primary mx-auto mb-3" />
               <p className="text-3xl font-bold text-foreground">£2M+</p>
-              <p className="text-sm text-muted-foreground font-medium">Portfolio Value</p>
+              <p className="text-sm text-muted-foreground font-medium">Total Value</p>
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
             <div className="inline-block mb-6">
               <div className="h-px w-16 bg-primary mb-4"></div>
               <p className="text-sm font-serif text-primary uppercase tracking-widest">
-                Portfolio Excellence
+                Projects Excellence
               </p>
             </div>
             <h2 className="text-5xl md:text-6xl font-serif text-foreground mb-6 leading-tight">
@@ -109,7 +109,7 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               With over fifteen years of expertise in property investment, Mary has cultivated 
-              a distinguished portfolio that exemplifies the art of wealth creation through 
+              a distinguished collection of projects that exemplifies the art of wealth creation through 
               strategic property acquisition and management.
             </p>
             <div className="space-y-4">
@@ -128,7 +128,7 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
                 </div>
                 <div>
                   <h3 className="font-serif text-foreground text-lg mb-1">Sustainable Growth</h3>
-                  <p className="text-muted-foreground text-sm">Portfolio valued at over £2M with consistent returns</p>
+                  <p className="text-muted-foreground text-sm">Total valued at over £2M with consistent returns</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -161,13 +161,13 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-1 w-12 bg-primary"></div>
-              <span className="text-xs font-bold text-primary uppercase tracking-widest">Investment Portfolio</span>
+              <span className="text-xs font-bold text-primary uppercase tracking-widest">Investment Projects</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
               Professional Property Investment Solutions
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Delivering exceptional returns through strategic property acquisition and expert portfolio management since 2008.
+              Delivering exceptional returns through strategic property acquisition and expert project management since 2008.
             </p>
           </div>
           <div className="bg-primary/5 border border-primary/20 p-6 rounded-lg">
@@ -205,7 +205,7 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
             <Star className="w-3 h-3 text-primary fill-primary" />
           </div>
           <h2 className="text-6xl md:text-7xl font-serif text-foreground mb-6 leading-tight italic">
-            The Portfolio
+            The Projects
           </h2>
           <p className="text-2xl text-primary font-light tracking-wide">Est. 2008</p>
         </div>
@@ -215,7 +215,7 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
               <Sparkles className="w-10 h-10 text-primary" />
             </div>
             <p className="text-4xl font-serif text-foreground mb-2">£2M+</p>
-            <p className="text-sm text-muted-foreground uppercase tracking-widest">Portfolio Valuation</p>
+            <p className="text-sm text-muted-foreground uppercase tracking-widest">Total Valuation</p>
           </div>
           <div className="text-center">
             <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
@@ -240,7 +240,7 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
     <section className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold text-foreground mb-4">Investment Portfolio Overview</h2>
+          <h2 className="text-5xl font-bold text-foreground mb-4">Investment Projects Overview</h2>
           <p className="text-xl text-muted-foreground">Building wealth through strategic property investments</p>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
@@ -256,7 +256,7 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
             <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
               <TrendingUp className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="text-2xl font-bold text-foreground mb-3">Portfolio Value</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-3">Total Value</h3>
             <p className="text-5xl font-bold text-primary mb-2">£2M+</p>
             <p className="text-muted-foreground">Consistent growth through strategic acquisitions and management</p>
           </div>
@@ -282,7 +282,7 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="text-center text-primary-foreground">
           <h2 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
-            Mary's Investment Portfolio
+            Mary's Investment Projects
           </h2>
           <p className="text-2xl mb-12 opacity-90 max-w-3xl mx-auto">
             Over 15 years of building sustainable wealth through strategic property investments
@@ -298,7 +298,7 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
               <div className="w-32 h-32 mx-auto bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mb-4 border-4 border-white/20">
                 <p className="text-5xl font-bold">£2M</p>
               </div>
-              <p className="text-lg font-semibold">Portfolio Value</p>
+              <p className="text-lg font-semibold">Total Value</p>
             </div>
             <div className="text-center">
               <div className="w-32 h-32 mx-auto bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mb-4 border-4 border-white/20">
@@ -316,7 +316,7 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
     <section className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-foreground mb-4">Portfolio Journey</h2>
+          <h2 className="text-5xl font-bold text-foreground mb-4">Projects Journey</h2>
           <p className="text-xl text-muted-foreground">15 years of strategic growth and success</p>
         </div>
         <div className="relative">
@@ -349,7 +349,7 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
             <div className="flex items-center gap-8">
               <div className="flex-1 text-right">
                 <h3 className="text-3xl font-bold text-primary mb-2">£1M</h3>
-                <p className="text-muted-foreground">Portfolio valuation milestone</p>
+                <p className="text-muted-foreground">Total valuation milestone</p>
               </div>
               <div className="relative z-10 w-16 h-16 bg-primary rounded-full flex items-center justify-center border-4 border-background shadow-lg">
                 <TrendingUp className="w-8 h-8 text-primary-foreground" />
@@ -364,7 +364,7 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
               </div>
               <div className="flex-1">
                 <h3 className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">Today</h3>
-                <p className="text-lg text-foreground font-semibold">20+ properties • £2M+ portfolio</p>
+                <p className="text-lg text-foreground font-semibold">20+ properties • £2M+ total value</p>
               </div>
             </div>
           </div>
@@ -383,7 +383,7 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
               <span className="text-sm font-bold text-primary uppercase tracking-wide">Data-Driven Success</span>
             </div>
             <h2 className="text-5xl font-bold text-foreground mb-6 leading-tight">
-              Portfolio Performance
+              Projects Performance
               <br />
               <span className="text-primary">By The Numbers</span>
             </h2>
@@ -450,4 +450,4 @@ const PortfolioHeader = ({ styleVariant = "minimalist" }: PortfolioHeaderProps) 
   );
 };
 
-export default PortfolioHeader;
+export default ProjectsHeader;

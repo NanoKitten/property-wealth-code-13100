@@ -16,7 +16,7 @@ const Navigation = () => {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About Mary", href: "/about-mary" },
-    { name: "Portfolio", href: "/portfolio" },
+    { name: "Projects", href: "/projects" },
     { name: "Contact", href: "/#contact" },
   ];
 

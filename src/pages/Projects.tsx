@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import PortfolioHeader from "@/components/PortfolioHeader";
+import ProjectsHeader from "@/components/ProjectsHeader";
 import PropertyCarousel from "@/components/PropertyCarousel";
 import {
   Select,
@@ -13,7 +13,7 @@ import {
 
 type StyleVariant = "minimalist" | "bold" | "elegant" | "corporate" | "luxury" | "cards" | "gradient" | "timeline" | "stats";
 
-const Portfolio = () => {
+const Projects = () => {
   const [selectedStyle, setSelectedStyle] = useState<StyleVariant>("minimalist");
 
   return (
@@ -22,7 +22,7 @@ const Portfolio = () => {
       
       {/* Style Selector - Fixed Position */}
       <div className="fixed top-20 right-6 z-50 bg-background/95 backdrop-blur-sm border border-border rounded-lg shadow-lg p-4">
-        <p className="text-xs text-muted-foreground mb-2 font-medium">Portfolio Style:</p>
+        <p className="text-xs text-muted-foreground mb-2 font-medium">Projects Style:</p>
         <Select value={selectedStyle} onValueChange={(value) => setSelectedStyle(value as StyleVariant)}>
           <SelectTrigger className="w-[180px]">
             <SelectValue />
@@ -42,7 +42,7 @@ const Portfolio = () => {
       </div>
 
       <div className="pt-16">
-        <PortfolioHeader styleVariant={selectedStyle} />
+        <ProjectsHeader styleVariant={selectedStyle} />
         <PropertyCarousel styleVariant={selectedStyle} />
       </div>
       <Footer />
@@ -50,4 +50,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Projects;
