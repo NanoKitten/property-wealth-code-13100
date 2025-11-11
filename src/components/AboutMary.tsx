@@ -349,7 +349,7 @@ const AboutMary = () => {
   };
 
   return (
-    <section id="about" className="pt-0 pb-20 bg-secondary/30 overflow-hidden">
+    <section id="about" className="pt-0 md:pt-20 pb-20 bg-secondary/30 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <Tabs defaultValue="about" className="w-full">
           <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
