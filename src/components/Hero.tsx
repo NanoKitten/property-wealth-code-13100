@@ -15,6 +15,12 @@ const Hero = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="space-y-8">
               <p className="text-primary font-medium tracking-wide uppercase text-sm">FOR WOMAN OVER 35+ READY TO BECOME PROPERTY ENTREPRENEURS</p>
+              <h1 style={{
+              filter: 'blur(0.6px)'
+            }} className="text-4xl md:text-6xl font-serif text-black leading-tight font-extrabold lg:text-5xl">
+              <span className="text-primary-dark">IT'S TIME FOR WOMEN</span><br />
+              TO BUILD GENERATIONAL WEALTH
+              </h1>
 
               {/* Keyword Carousel */}
               <div className="relative overflow-hidden py-4" style={{
