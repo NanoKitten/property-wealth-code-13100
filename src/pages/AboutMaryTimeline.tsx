@@ -202,10 +202,10 @@ const AboutMaryTimeline = () => {
               {timelineData.map((item, index) => (
                 <div
                   key={index}
-                  className="w-[300px] mb-16"
+                  className="w-[300px] mb-24 bg-background pb-2"
                   style={{
                     position: 'sticky',
-                    top: '6rem',
+                    top: `${6 + index * 1.5}rem`,
                     zIndex: index + 1,
                   }}
                 >
