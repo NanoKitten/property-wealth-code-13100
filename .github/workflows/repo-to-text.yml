@@ -1,0 +1,78 @@
+name: Repo to Text
+on:
+  workflow_dispatch: {}   # lets you run it manually
+  push:
+    branches: [ main ]    # (optional) auto-run on each push
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate single text file
+        run: |
+          python - <<'PY'
+          import os, pathlib, datetime
+
+          ROOT = pathlib.Path(".").resolve()
+          OUT  = ROOT / "repo_dump.txt"
+
+          EXCLUDE_DIRS = {".git","node_modules","dist","build",".next",".venv","venv",".output",".turbo",".cache",".pytest_cache","coverage"}
+          ALLOWED_FILES_BY_NAME = {"Dockerfile","Makefile","Procfile","LICENSE"}
+          ALLOWED_EXTS = {
+              ".js",".jsx",".ts",".tsx",".mjs",".cjs",
+              ".json",".jsonc",".yml",".yaml",".toml",".ini",".env",".conf",
+              ".md",".markdown",".txt",
+              ".html",".css",".scss",".sass",".less",
+              ".py",".sh",".bat",".ps1",".rb",".php",".java",".kt",".go",".rs",
+              ".c",".h",".hpp",".cpp",".cs",".sql",".xml",".vue",".svelte",".astro"
+          }
+          MAX_BYTES = 1_000_000
+
+          def include(p: pathlib.Path) -> bool:
+              if any(part in EXCLUDE_DIRS for part in p.parts): return False
+              if p.name in ALLOWED_FILES_BY_NAME: return True
+              return p.suffix.lower() in ALLOWED_EXTS
+
+          files = []
+          for dp, dns, fns in os.walk(ROOT):
+              dns[:] = [d for d in dns if d not in EXCLUDE_DIRS]
+              for n in fns:
+                  p = pathlib.Path(dp)/n
+                  try:
+                      if include(p) and p.stat().st_size <= MAX_BYTES:
+                          files.append(p)
+                  except Exception:
+                      pass
+          files.sort(key=lambda p: str(p).lower())
+
+          with open(OUT,"w",encoding="utf-8",errors="ignore") as out:
+              out.write(f"# Repository Dump: {ROOT.name}\n")
+              out.write(f"# Generated: {datetime.datetime.utcnow().isoformat()}Z\n\n")
+              for p in files:
+                  rel = p.relative_to(ROOT)
+                  out.write(f"\n===== FILE: {rel} =====\n\n")
+                  try:
+                      with open(p,"r",encoding="utf-8",errors="ignore") as f:
+                          out.write(f.read())
+                  except Exception as e:
+                      out.write(f"[Skipped: {e}]\n")
+          print(f"Wrote {OUT}")
+          PY
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: repo-as-text
+          path: repo_dump.txt
+
+      # Optional: commit the dump back into the repo
+      - name: Commit repo_dump.txt
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add repo_dump.txt
+          git commit -m "chore: update repo_dump.txt" || echo "No changes to commit"
+          git push
