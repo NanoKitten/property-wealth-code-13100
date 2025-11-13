@@ -38,18 +38,21 @@ const CommunityWaitlistDialog = ({ open, onOpenChange }: CommunityWaitlistDialog
     setIsSubmitting(true);
 
     try {
-      const formDataToSend = new FormData();
-      formDataToSend.append('sheet', 'communityWaitlist');
-      formDataToSend.append('name', formData.name || 'Not provided');
-      formDataToSend.append('email', formData.email || 'Not provided');
-      formDataToSend.append('phone', formData.phone || 'Not provided');
-      formDataToSend.append('emailConsent', formData.emailConsent.toString());
-      formDataToSend.append('phoneConsent', formData.phoneConsent.toString());
-      formDataToSend.append('timestamp', new Date().toISOString());
+      const params = new URLSearchParams();
+      params.append('sheet', 'communityWaitlist');
+      params.append('name', formData.name || 'Not provided');
+      params.append('email', formData.email || 'Not provided');
+      params.append('phone', formData.phone || 'Not provided');
+      params.append('emailConsent', formData.emailConsent.toString());
+      params.append('phoneConsent', formData.phoneConsent.toString());
+      params.append('timestamp', new Date().toISOString());
 
       const response = await fetch("https://script.google.com/macros/s/AKfycbw2entStb5qXFZBZtw6iZoRLy6X7tCCe_V6ZDRrZ251uo8_Yv2ZARaeOsStNlcxg6J1ig/exec", {
         method: "POST",
-        body: formDataToSend,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: params.toString(),
       });
 
       toast({
@@ -97,7 +100,7 @@ const CommunityWaitlistDialog = ({ open, onOpenChange }: CommunityWaitlistDialog
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email">Email Address (Optional)</Label>
+            <Label htmlFor="email">Email Address</Label>
             <Input 
               id="email" 
               type="email" 
@@ -108,7 +111,7 @@ const CommunityWaitlistDialog = ({ open, onOpenChange }: CommunityWaitlistDialog
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="phone">Phone Number (Optional)</Label>
+            <Label htmlFor="phone">Phone Number</Label>
             <Input 
               id="phone" 
               type="tel" 
@@ -134,7 +137,7 @@ const CommunityWaitlistDialog = ({ open, onOpenChange }: CommunityWaitlistDialog
                   htmlFor="emailConsent"
                   className="text-sm font-normal text-foreground cursor-pointer"
                 >
-                  I consent to being contacted via email regarding the community launch and updates
+                  Email Contact Consent
                 </Label>
               </div>
             </div>
@@ -152,7 +155,7 @@ const CommunityWaitlistDialog = ({ open, onOpenChange }: CommunityWaitlistDialog
                   htmlFor="phoneConsent"
                   className="text-sm font-normal text-foreground cursor-pointer"
                 >
-                  I consent to being contacted via phone regarding the community launch and updates
+                  Phone Contact Consent
                 </Label>
               </div>
             </div>
