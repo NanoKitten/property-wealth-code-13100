@@ -43,7 +43,7 @@ const PropertyCode = () => {
             <span className="text-primary">Property Code?</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Your Property Code is a unique 9-number framework that reveals exactly which properties, strategies, and timelines will work for YOUR specific situation. No more guesswork—just a clear, personalised roadmap to wealth.
+            Your Property Code is a unique 9-number framework that reveals exactly which properties, strategies, and timelines will work for YOUR specific situation. No more guesswork-just a clear, personalised roadmap to wealth.
           </p>
         </div>
 

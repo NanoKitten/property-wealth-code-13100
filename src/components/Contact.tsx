@@ -283,7 +283,7 @@ const Contact = () => {
                         onCheckedChange={(checked) => setFormData(prev => ({ ...prev, emailConsent: checked === true }))}
                       />
                       <Label htmlFor="emailConsent" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
-                        I consent to receiving property insights and updates via email
+                        I consent to being contacted on: <strong>Email</strong>
                       </Label>
                     </div>
                     <div className="flex items-start gap-3">
@@ -293,7 +293,7 @@ const Contact = () => {
                         onCheckedChange={(checked) => setFormData(prev => ({ ...prev, phoneConsent: checked === true }))}
                       />
                       <Label htmlFor="phoneConsent" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
-                        I consent to being contacted via phone regarding my inquiry
+                        I consent to being contacted on: <strong>Phone</strong>
                       </Label>
                     </div>
                   </div>

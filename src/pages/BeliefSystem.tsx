@@ -36,7 +36,7 @@ const BeliefSystem = () => {
                 style={{ filter: 'blur(0.3px)' }}
               />
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Epigenetics profoundly shapes the business experience and success pathways for women by influencing how inherited and lived experiences, social stress, and trauma are expressed through gene activity. Changes in gene expression—rather than fixed genetic code—can make women more sensitive to stress, adversity, and behavioral traits inherited from previous generations, impacting decision-making, risk tolerance, resilience, and leadership style.
+                Epigenetics profoundly shapes the business experience and success pathways for women by influencing how inherited and lived experiences, social stress, and trauma are expressed through gene activity. Changes in gene expression-rather than fixed genetic code-can make women more sensitive to stress, adversity, and behavioral traits inherited from previous generations, impacting decision-making, risk tolerance, resilience, and leadership style.
               </p>
             </section>
 
@@ -71,11 +71,11 @@ const BeliefSystem = () => {
                   <ul className="space-y-3 text-muted-foreground">
                     <li className="flex gap-2">
                       <span className="text-primary mt-1">•</span>
-                      <span>The business environment, leadership pressures, and workplace culture also shape gene expression patterns—meaning that female entrepreneurs' resilience and adaptive skills can be boosted or suppressed by social support, discrimination, or chronic stress.</span>
+                      <span>The business environment, leadership pressures, and workplace culture also shape gene expression patterns-meaning that female entrepreneurs' resilience and adaptive skills can be boosted or suppressed by social support, discrimination, or chronic stress.</span>
                     </li>
                     <li className="flex gap-2">
                       <span className="text-primary mt-1">•</span>
-                      <span>Sex-specific social exposures, such as gendered expectations or unequal access to opportunity, interact with epigenetic regulation—making women more or less likely to experience burnout, depression, or self-doubt, particularly in male-dominated industries.</span>
+                      <span>Sex-specific social exposures, such as gendered expectations or unequal access to opportunity, interact with epigenetic regulation-making women more or less likely to experience burnout, depression, or self-doubt, particularly in male-dominated industries.</span>
                     </li>
                   </ul>
                 </div>
