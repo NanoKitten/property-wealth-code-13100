@@ -48,7 +48,7 @@ const CommunityWaitlistDialog = ({ open, onOpenChange }: CommunityWaitlistDialog
         timestamp: new Date().toISOString()
       };
 
-      const response = await fetch("https://script.google.com/macros/s/AKfycbw2entStb5qXFZBZtw6iZoRLy6X7tCCe_V6ZDRrZ251uo8_Yv2ZARaeOsStNlcxg6J1ig/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbzrOj1zGgwzP-k5VF5FG4xXnNCgeMN9WRXpeFodNEU95Kz5jqPqnnFYV7byA72cS9vR0g/exec", {
         method: "POST",
         headers: {
           "Content-Type": "text/plain",
