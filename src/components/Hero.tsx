@@ -77,13 +77,9 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity text-primary-foreground font-semibold px-8 py-4 shadow-elegant" asChild>
                   <a href="https://v22-the-property-wealth-code-next-best-move-plan-806236894411.us-west1.run.app/" target="_blank" rel="noopener noreferrer">
-                    Take the Quiz
+                    Take the Free Quiz
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
-                </Button>
-                <Button variant="accent" size="lg" className="border border-accent/30">
-                  <Play className="mr-2 h-5 w-5" />
-                  Watch Mary's Story
                 </Button>
               </div>
             </div>
@@ -101,20 +97,14 @@ const Hero = () => {
               </p>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="inline-flex flex-wrap justify-center gap-3 md:gap-6 text-xs md:text-sm text-foreground bg-background/80 backdrop-blur-md px-4 md:px-8 py-4 rounded-full border border-accent/30 shadow-soft mx-auto max-w-full overflow-hidden">
-              <div className="flex items-center gap-2 whitespace-nowrap">
-                <div className="w-2 h-2 bg-accent rounded-full shadow-lg shadow-accent/50"></div>
-                <span>15+ years property experience</span>
-              </div>
-              <div className="flex items-center gap-2 whitespace-nowrap">
-                <div className="w-2 h-2 bg-accent rounded-full shadow-lg shadow-accent/50"></div>
-                <span>£2M+ portfolio built</span>
-              </div>
-              <div className="flex items-center gap-2 whitespace-nowrap">
-                <div className="w-2 h-2 bg-accent rounded-full shadow-lg shadow-accent/50"></div>
-                <span>500+ women empowered</span>
-              </div>
+            {/* CTA Button */}
+            <div className="flex justify-center mt-8">
+              <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity text-primary-foreground font-semibold px-8 py-4 shadow-elegant" asChild>
+                <a href="https://v22-the-property-wealth-code-next-best-move-plan-806236894411.us-west1.run.app/" target="_blank" rel="noopener noreferrer">
+                  Take the Quiz
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
             </div>
 
           </div>
