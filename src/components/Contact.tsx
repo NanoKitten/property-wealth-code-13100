@@ -155,21 +155,21 @@ const Contact = () => {
 
             {/* Quick Contact Info */}
             <div className="bg-gradient-hero rounded-2xl p-8 space-y-4">
-              <h3 className="text-xl font-semibold text-foreground mb-4">
+              <h3 className="text-xl font-semibold text-foreground dark:text-black mb-4">
                 Quick Contact
               </h3>
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-3">
                   <Phone className="h-4 w-4 text-primary" />
-                  <span className="text-foreground/70 dark:text-muted-foreground">Available Mon-Fri, 9am-5pm</span>
+                  <span className="text-foreground/70 dark:text-black/70">Available Mon-Fri, 9am-5pm</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="h-4 w-4 text-primary" />
-                  <span className="text-foreground/70 dark:text-muted-foreground">Response within 24 hours</span>
+                  <span className="text-foreground/70 dark:text-black/70">Response within 24 hours</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MessageCircle className="h-4 w-4 text-primary" />
-                  <span className="text-foreground/70 dark:text-muted-foreground">WhatsApp support for coaching clients</span>
+                  <span className="text-foreground/70 dark:text-black/70">WhatsApp support for coaching clients</span>
                 </div>
               </div>
             </div>

@@ -39,7 +39,7 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:block">
-            <div className="ml-10 flex items-baseline gap-6">
+            <div className="ml-10 flex items-baseline gap-4">
               {navItems.map((item) => (
                 <a
                   key={item.name}
@@ -77,7 +77,7 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2">
             <Button
               variant="ghost"
               size="icon"
@@ -93,7 +93,7 @@ const Navigation = () => {
 
             <Button 
               variant="default" 
-              className="bg-gradient-primary hover:opacity-90 transition-opacity"
+              className="bg-gradient-primary hover:opacity-90 transition-opacity whitespace-nowrap"
               asChild
             >
               <a href="https://v22-the-property-wealth-code-next-best-move-plan-806236894411.us-west1.run.app/" target="_blank" rel="noopener noreferrer">
