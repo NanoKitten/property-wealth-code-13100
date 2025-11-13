@@ -16,18 +16,20 @@ const CommunityWaitlistDialog = ({ open, onOpenChange }: CommunityWaitlistDialog
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
+    name: "",
     email: "",
     phone: "",
-    consent: false
+    emailConsent: false,
+    phoneConsent: false
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.consent) {
+    if (!formData.emailConsent && !formData.phoneConsent) {
       toast({
         title: "Consent Required",
-        description: "Please consent to being contacted to join the waitlist.",
+        description: "Please consent to at least one contact method to join the waitlist.",
         variant: "destructive"
       });
       return;
@@ -36,19 +38,18 @@ const CommunityWaitlistDialog = ({ open, onOpenChange }: CommunityWaitlistDialog
     setIsSubmitting(true);
 
     try {
+      const formDataToSend = new FormData();
+      formDataToSend.append('sheet', 'communityWaitlist');
+      formDataToSend.append('name', formData.name || 'Not provided');
+      formDataToSend.append('email', formData.email || 'Not provided');
+      formDataToSend.append('phone', formData.phone || 'Not provided');
+      formDataToSend.append('emailConsent', formData.emailConsent.toString());
+      formDataToSend.append('phoneConsent', formData.phoneConsent.toString());
+      formDataToSend.append('timestamp', new Date().toISOString());
+
       const response = await fetch("https://script.google.com/macros/s/AKfycbw2entStb5qXFZBZtw6iZoRLy6X7tCCe_V6ZDRrZ251uo8_Yv2ZARaeOsStNlcxg6J1ig/exec", {
         method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          sheet: "communityWaitlist",
-          email: formData.email || "Not provided",
-          phone: formData.phone || "Not provided",
-          consent: formData.consent,
-          timestamp: new Date().toISOString()
-        }),
+        body: formDataToSend,
       });
 
       toast({
@@ -56,7 +57,7 @@ const CommunityWaitlistDialog = ({ open, onOpenChange }: CommunityWaitlistDialog
         description: "Thank you for joining. We'll be in touch soon with exciting updates about the community.",
       });
 
-      setFormData({ email: "", phone: "", consent: false });
+      setFormData({ name: "", email: "", phone: "", emailConsent: false, phoneConsent: false });
       onOpenChange(false);
     } catch (error) {
       console.error("Error submitting to waitlist:", error);
@@ -64,7 +65,7 @@ const CommunityWaitlistDialog = ({ open, onOpenChange }: CommunityWaitlistDialog
         title: "Request Sent",
         description: "Your waitlist request has been submitted. We'll be in touch soon!",
       });
-      setFormData({ email: "", phone: "", consent: false });
+      setFormData({ name: "", email: "", phone: "", emailConsent: false, phoneConsent: false });
       onOpenChange(false);
     } finally {
       setIsSubmitting(false);
@@ -83,6 +84,18 @@ const CommunityWaitlistDialog = ({ open, onOpenChange }: CommunityWaitlistDialog
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-6 mt-4">
+          <div className="space-y-2">
+            <Label htmlFor="name">Name</Label>
+            <Input 
+              id="name" 
+              type="text" 
+              placeholder="Your name"
+              value={formData.name}
+              onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+              required
+            />
+          </div>
+
           <div className="space-y-2">
             <Label htmlFor="email">Email Address (Optional)</Label>
             <Input 
@@ -105,21 +118,43 @@ const CommunityWaitlistDialog = ({ open, onOpenChange }: CommunityWaitlistDialog
             />
           </div>
 
-          <div className="flex items-start space-x-3 space-y-0">
-            <Checkbox
-              id="consent"
-              checked={formData.consent}
-              onCheckedChange={(checked) => 
-                setFormData(prev => ({ ...prev, consent: checked as boolean }))
-              }
-            />
-            <div className="space-y-1 leading-none">
-              <Label
-                htmlFor="consent"
-                className="text-sm font-normal text-foreground cursor-pointer"
-              >
-                I consent to being contacted through the provided email and/or phone number regarding the community launch and updates.
-              </Label>
+          <div className="space-y-3">
+            <p className="text-sm font-medium text-foreground">Contact Preferences</p>
+            
+            <div className="flex items-start space-x-3 space-y-0">
+              <Checkbox
+                id="emailConsent"
+                checked={formData.emailConsent}
+                onCheckedChange={(checked) => 
+                  setFormData(prev => ({ ...prev, emailConsent: checked as boolean }))
+                }
+              />
+              <div className="space-y-1 leading-none">
+                <Label
+                  htmlFor="emailConsent"
+                  className="text-sm font-normal text-foreground cursor-pointer"
+                >
+                  I consent to being contacted via email regarding the community launch and updates
+                </Label>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-3 space-y-0">
+              <Checkbox
+                id="phoneConsent"
+                checked={formData.phoneConsent}
+                onCheckedChange={(checked) => 
+                  setFormData(prev => ({ ...prev, phoneConsent: checked as boolean }))
+                }
+              />
+              <div className="space-y-1 leading-none">
+                <Label
+                  htmlFor="phoneConsent"
+                  className="text-sm font-normal text-foreground cursor-pointer"
+                >
+                  I consent to being contacted via phone regarding the community launch and updates
+                </Label>
+              </div>
             </div>
           </div>
           
@@ -127,7 +162,7 @@ const CommunityWaitlistDialog = ({ open, onOpenChange }: CommunityWaitlistDialog
             type="submit"
             size="lg" 
             className="w-full bg-gradient-primary hover:opacity-90 transition-opacity text-primary-foreground font-semibold"
-            disabled={isSubmitting || !formData.consent}
+            disabled={isSubmitting || (!formData.emailConsent && !formData.phoneConsent)}
           >
             {isSubmitting ? "Joining..." : "Join Waitlist"}
             <ArrowRight className="ml-2 h-5 w-5" />

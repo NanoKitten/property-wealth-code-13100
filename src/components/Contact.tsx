@@ -27,22 +27,19 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
+      const formDataToSend = new FormData();
+      formDataToSend.append('sheet', 'Messages');
+      formDataToSend.append('firstName', formData.firstName);
+      formDataToSend.append('lastName', formData.lastName);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone || 'Not provided');
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('timestamp', new Date().toISOString());
+
       const response = await fetch("https://script.google.com/macros/s/AKfycbw2entStb5qXFZBZtw6iZoRLy6X7tCCe_V6ZDRrZ251uo8_Yv2ZARaeOsStNlcxg6J1ig/exec", {
         method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          sheet: "Messages",
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          phone: formData.phone || "Not provided",
-          subject: formData.subject,
-          message: formData.message,
-          timestamp: new Date().toISOString()
-        }),
+        body: formDataToSend,
       });
 
       trackFormSubmission('contact_form', true);
