@@ -73,14 +73,14 @@ const Contact = () => {
       icon: Calendar,
       title: "Complete Property Debrief",
       description: "Full 45 minute consultation with Mary, personalised debriefing document, and access to beta Skool community before public launch along with 1 Month free after launch",
-      action: "Book Now - £197",
+      action: "Book Now - £495",
       primary: true
     },
     {
       icon: MessageCircle,
-      title: "Join the Community",
+      title: "Join the Community Waitlist",
       description: "Connect with like-minded women building wealth",
-      action: "Join Community"
+      action: "Join Community Waitlist"
     },
     {
       icon: Mail,
@@ -144,7 +144,7 @@ const Contact = () => {
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-3">
                   <Phone className="h-4 w-4 text-primary" />
-                  <span className="text-muted-foreground">Available for calls Mon-Fri, 9am-5pm</span>
+                  <span className="text-muted-foreground">Available Mon-Fri, 9am-5pm</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="h-4 w-4 text-primary" />

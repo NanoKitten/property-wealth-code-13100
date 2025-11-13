@@ -10,7 +10,7 @@ const Footer = () => {
   ];
 
   const services = [
-    { name: "Strategy Call (£35)", href: "#services" },
+    { name: "Property Debrief and Strategy (£495)", href: "#services" },
     { name: "Property Code Test", href: "#services" },
     { name: "Monthly Community", href: "#services" },
     { name: "1:1 Coaching", href: "#services" }
