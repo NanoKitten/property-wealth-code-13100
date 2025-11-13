@@ -38,21 +38,22 @@ const CommunityWaitlistDialog = ({ open, onOpenChange }: CommunityWaitlistDialog
     setIsSubmitting(true);
 
     try {
-      const params = new URLSearchParams();
-      params.append('sheet', 'communityWaitlist');
-      params.append('name', formData.name || 'Not provided');
-      params.append('email', formData.email || 'Not provided');
-      params.append('phone', formData.phone || 'Not provided');
-      params.append('emailConsent', formData.emailConsent.toString());
-      params.append('phoneConsent', formData.phoneConsent.toString());
-      params.append('timestamp', new Date().toISOString());
+      const payload = {
+        sheet: 'communityWaitlist',
+        name: formData.name || 'Not provided',
+        email: formData.email || 'Not provided',
+        phone: formData.phone || 'Not provided',
+        emailConsent: formData.emailConsent.toString(),
+        phoneConsent: formData.phoneConsent.toString(),
+        timestamp: new Date().toISOString()
+      };
 
       const response = await fetch("https://script.google.com/macros/s/AKfycbw2entStb5qXFZBZtw6iZoRLy6X7tCCe_V6ZDRrZ251uo8_Yv2ZARaeOsStNlcxg6J1ig/exec", {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/json",
         },
-        body: params.toString(),
+        body: JSON.stringify(payload),
       });
 
       toast({
