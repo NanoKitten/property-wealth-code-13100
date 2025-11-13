@@ -52,7 +52,7 @@ const Testimonials = () => {
             <Card className="bg-gradient-hero border-0 shadow-elegant h-full">
               <CardContent className="p-6 md:p-12 space-y-4 md:space-y-6">
                 <Quote className="h-8 w-8 md:h-12 md:w-12 text-primary/20" />
-                <p className="text-base md:text-xl text-foreground leading-relaxed italic">
+                <p className="text-base md:text-xl text-foreground/90 dark:text-foreground leading-relaxed italic">
                   "{testimonials[0].text}"
                 </p>
                 <div className="bg-primary/10 rounded-xl p-4 md:p-6 inline-block">
@@ -60,7 +60,7 @@ const Testimonials = () => {
                 </div>
                 <div className="border-t border-border pt-4 md:pt-6">
                   <h4 className="text-xl md:text-2xl font-semibold text-foreground">{testimonials[0].name}</h4>
-                  <p className="text-sm md:text-base text-muted-foreground">{testimonials[0].title}</p>
+                  <p className="text-sm md:text-base text-foreground/70 dark:text-muted-foreground">{testimonials[0].title}</p>
                   <p className="text-xs md:text-sm text-primary">{testimonials[0].location}</p>
                 </div>
               </CardContent>

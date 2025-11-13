@@ -97,7 +97,7 @@ const Navigation = () => {
               asChild
             >
               <a href="https://v22-the-property-wealth-code-next-best-move-plan-806236894411.us-west1.run.app/" target="_blank" rel="noopener noreferrer">
-                Take the Quiz
+                Take the Free Quiz
               </a>
             </Button>
           </div>
