@@ -72,7 +72,7 @@ const Contact = () => {
     {
       icon: Calendar,
       title: "Complete Property Debrief",
-      description: "Full 45 minute consultation with Mary, personalised debriefing document, and access to beta Skool community before public launch along with 3 Months free after launch",
+      description: "Full 45 minute consultation with Mary, personalised debriefing document, and access to beta Skool community before public launch along with 1 Month free after launch",
       action: "Book Now - £197",
       primary: true
     },
