@@ -15,15 +15,18 @@ const Navigation = () => {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "About Mary", href: "/about-mary" },
-    { name: "Projects", href: "/projects" },
-    { name: "Speaking & Mentoring", href: "/speaking-mentoring" },
   ];
 
-  const unlockingSuccessItems = [
+  const tpwcItems = [
     { name: "Nervous System", href: "/nervous-system" },
     { name: "Bloodline", href: "/bloodline" },
     { name: "Belief System", href: "/belief-system" },
+  ];
+
+  const secondaryNavItems = [
+    { name: "About Mary", href: "/about-mary" },
+    { name: "Projects", href: "/projects" },
+    { name: "Speaking & Mentoring", href: "/speaking-mentoring" },
   ];
 
   return (
@@ -51,11 +54,11 @@ const Navigation = () => {
               ))}
               <DropdownMenu>
                 <DropdownMenuTrigger className="text-foreground hover:text-primary px-2 py-2 text-sm font-medium transition-colors duration-200 flex items-center gap-1">
-                  Unlocking Success
+                  TPWC
                   <ChevronDown className="h-4 w-4" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start" className="bg-background border-border">
-                  {unlockingSuccessItems.map((item) => (
+                  {tpwcItems.map((item) => (
                     <DropdownMenuItem key={item.name} asChild>
                       <a
                         href={item.href}
@@ -67,6 +70,15 @@ const Navigation = () => {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
+              {secondaryNavItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-foreground hover:text-primary px-2 py-2 text-sm font-medium transition-colors duration-200"
+                >
+                  {item.name}
+                </a>
+              ))}
               <a
                 href="/#contact"
                 className="text-foreground hover:text-primary px-2 py-2 text-sm font-medium transition-colors duration-200"
@@ -143,11 +155,11 @@ const Navigation = () => {
               ))}
               <DropdownMenu>
                 <DropdownMenuTrigger className="text-foreground hover:text-primary w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 flex items-center justify-between">
-                  Unlocking Success
+                  TPWC
                   <ChevronDown className="h-4 w-4" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start" className="bg-background border-border w-full">
-                  {unlockingSuccessItems.map((item) => (
+                  {tpwcItems.map((item) => (
                     <DropdownMenuItem key={item.name} asChild>
                       <a
                         href={item.href}
@@ -160,6 +172,16 @@ const Navigation = () => {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
+              {secondaryNavItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-foreground hover:text-primary block px-3 py-2 text-base font-medium transition-colors duration-200"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ))}
               <a
                 href="/#contact"
                 className="text-foreground hover:text-primary block px-3 py-2 text-base font-medium transition-colors duration-200"

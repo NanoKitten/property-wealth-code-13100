@@ -25,12 +25,12 @@ interface TransformationStoryProps {
 const storyData = {
   intro: {
     title: "The Transformation Journey: From Vision to Reality",
-    description: "The path from a derelict property to a stunning home is rarely straightforward. It's filled with unexpected challenges, countless decisions, and moments of doubt. But when you finally stand in that transformed space—with warm light flooding through the windows, beautiful finishes catching your eye, and the smell of fresh paint in the air—every obstacle, every late night, every difficult choice becomes absolutely worth it.\n\nThis is the journey I've walked over 20 times. And each transformation tells a story of perseverance, strategy, and the powerful feeling of turning potential into reality."
+    description: "The path from a derelict property to a stunning home is rarely straightforward. It's filled with unexpected challenges, countless decisions, and moments of doubt. But when you finally stand in that transformed space-with warm light flooding through the windows, beautiful finishes catching your eye, and the smell of fresh paint in the air-every obstacle, every late night, every difficult choice becomes absolutely worth it.\n\nThis is the journey I've walked over 20 times. And each transformation tells a story of perseverance, strategy, and the powerful feeling of turning potential into reality."
   },
   before: {
     title: "The Beginning",
     subtitle: "Seeing Potential Where Others Don't",
-    description: "Every transformation starts with a property others have walked away from. Damaged ceilings, exposed walls, structural concerns—these are the diamonds in the rough that most investors miss. While others see problems, I see possibilities.",
+    description: "Every transformation starts with a property others have walked away from. Damaged ceilings, exposed walls, structural concerns-these are the diamonds in the rough that most investors miss. While others see problems, I see possibilities.",
     images: [
       { src: basementDerelict, alt: "Derelict basement with exposed walls and damaged ceiling" },
       { src: doorDamaged, alt: "Damaged door and deteriorating entrance" },
@@ -40,7 +40,7 @@ const storyData = {
   during: {
     title: "The Journey",
     subtitle: "When Things Get Real",
-    description: "This is where the vision meets reality. Unexpected structural issues. Budget recalculations. Design pivots. The middle phase is messy, confusing, and often overwhelming. But it's also where the magic starts to take shape—where chaos gradually transforms into order, and you can finally start to see your vision emerging.",
+    description: "This is where the vision meets reality. Unexpected structural issues. Budget recalculations. Design pivots. The middle phase is messy, confusing, and often overwhelming. But it's also where the magic starts to take shape-where chaos gradually transforms into order, and you can finally start to see your vision emerging.",
     images: [
       { src: roomMidRenovation, alt: "Room mid-renovation with visible progress" },
       { src: livingAreaProgress, alt: "Living area under construction showing transformation" },
@@ -50,7 +50,7 @@ const storyData = {
   after: {
     title: "The Reward",
     subtitle: "Standing in Your Success",
-    description: "Then comes the moment that makes it all worthwhile. The chaos transforms into beauty. The stress melts into pride. You're standing in a space you created from nothing, knowing you turned a derelict building into someone's future home—and significant wealth for yourself. The bumpy, confusing, long journey suddenly feels like the shortest path when you see the finished result.",
+    description: "Then comes the moment that makes it all worthwhile. The chaos transforms into beauty. The stress melts into pride. You're standing in a space you created from nothing, knowing you turned a derelict building into someone's future home-and significant wealth for yourself. The bumpy, confusing, long journey suddenly feels like the shortest path when you see the finished result.",
     images: [
       { src: diningRoomFinished, alt: "Beautifully finished dining room with modern design" },
       { src: hallwayComplete, alt: "Completed hallway with elegant finishes" },
@@ -403,7 +403,7 @@ const TransformationStory = ({ variant }: TransformationStoryProps) => {
               <h3 className="text-3xl font-bold mb-6">The Journey Is Worth It</h3>
               <p className="text-lg leading-relaxed opacity-95">
                 Each property transformation teaches new lessons, reveals unexpected challenges, and ultimately rewards those who persist. 
-                The journey from derelict to dream home is never easy—but standing in that finished space, knowing what it once was 
+                The journey from derelict to dream home is never easy-but standing in that finished space, knowing what it once was 
                 and seeing what it's become, makes every struggle worthwhile.
               </p>
             </div>

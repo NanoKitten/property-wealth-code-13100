@@ -178,7 +178,7 @@ const AboutMaryTimeline = () => {
               "YOU ARE AMAZING. YOUR STORY IS SO UNIQUE TO YOU. I HOPE MY STORY ENCOURAGES YOU TO WRITE NEW CHAPTERS AND MAKE THEM WHAT YOU REALLY WANT."
             </blockquote>
             <p className="text-center mt-6 text-lg text-muted-foreground font-medium">
-              — Mary Cullen
+              - Mary Cullen
             </p>
           </div>
         </div>
@@ -188,7 +188,7 @@ const AboutMaryTimeline = () => {
       <section className="pb-12 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-lg text-muted-foreground leading-relaxed">
-            From a dreaming girl in rural Ireland to surviving mafia violence in Montenegro, to building a property empire while raising teenagers—this is the unfiltered journey of how one woman created freedom on her own terms.
+            From a dreaming girl in rural Ireland to surviving mafia violence in Montenegro, to building a property empire while raising teenagers-this is the unfiltered journey of how one woman created freedom on her own terms.
           </p>
         </div>
       </section>
@@ -298,7 +298,7 @@ const AboutMaryTimeline = () => {
             Ready to Write Your Own Story?
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            If Mary can build a property empire from scratch—twice—while raising a family and surviving impossible odds, imagine what you can achieve with the right guidance.
+            If Mary can build a property empire from scratch-twice-while raising a family and surviving impossible odds, imagine what you can achieve with the right guidance.
           </p>
           <Button 
             size="lg" 

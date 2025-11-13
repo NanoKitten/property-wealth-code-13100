@@ -42,7 +42,7 @@ const Testimonials = () => {
             <span className="text-primary block">Real Results</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            See how The Property Code has transformed the lives of women just like you—busy professionals and mothers building wealth through strategic property investment.
+            See how The Property Code has transformed the lives of women just like you-busy professionals and mothers building wealth through strategic property investment.
           </p>
         </div>
 

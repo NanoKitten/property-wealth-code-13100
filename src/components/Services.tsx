@@ -194,7 +194,7 @@ const Services = () => {
             💯 My Promise to You
           </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            I'm so confident in The Property Code system that I offer a satisfaction guarantee on all coaching programs. If you don't see clear progress within 30 days, I'll work with you until you do—at no extra cost.
+            I'm so confident in The Property Code system that I offer a satisfaction guarantee on all coaching programs. If you don't see clear progress within 30 days, I'll work with you until you do-at no extra cost.
           </p>
         </div>
       </div>

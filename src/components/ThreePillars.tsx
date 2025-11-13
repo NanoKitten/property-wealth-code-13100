@@ -9,13 +9,13 @@ const ThreePillars = () => {
     {
       icon: Brain,
       title: "Regulating the Female Nervous System",
-      description: "81% of UK women felt overwhelmed by stress in the past year. Chronic dysregulated nervous systems make it difficult to create your entrepreneurial property business. Learn techniques to regulate your nervous system and oxytocin levels—creating a calming platform to build from, without stress and burnout.",
+      description: "81% of UK women felt overwhelmed by stress in the past year. Chronic dysregulated nervous systems make it difficult to create your entrepreneurial property business. Learn techniques to regulate your nervous system and oxytocin levels-creating a calming platform to build from, without stress and burnout.",
       link: "/nervous-system"
     },
     {
       icon: Dna,
       title: "The Generational Curse Blocking Your Property Growth",
-      description: "No-one is talking about this apart from ME. I was raised in a traditional Irish family where boys inherited wealth and property. Knowing my place was engrained from my generational female bloodline. This work finally released me, and now I want to do the same for all women experiencing this—normally without even realising.",
+      description: "No-one is talking about this apart from ME. I was raised in a traditional Irish family where boys inherited wealth and property. Knowing my place was engrained from my generational female bloodline. This work finally released me, and now I want to do the same for all women experiencing this-normally without even realising.",
       link: "/bloodline"
     },
     {
