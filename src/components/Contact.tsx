@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { trackFormSubmission, trackButtonClick } from "@/lib/analytics";
@@ -19,7 +20,9 @@ const Contact = () => {
     email: "",
     phone: "",
     subject: "",
-    message: ""
+    message: "",
+    emailConsent: false,
+    phoneConsent: false
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -35,6 +38,8 @@ const Contact = () => {
         phone: formData.phone || 'Not provided',
         subject: formData.subject,
         message: formData.message,
+        emailConsent: formData.emailConsent,
+        phoneConsent: formData.phoneConsent,
         timestamp: new Date().toISOString()
       };
 
@@ -59,7 +64,9 @@ const Contact = () => {
         email: "",
         phone: "",
         subject: "",
-        message: ""
+        message: "",
+        emailConsent: false,
+        phoneConsent: false
       });
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -74,7 +81,9 @@ const Contact = () => {
         email: "",
         phone: "",
         subject: "",
-        message: ""
+        message: "",
+        emailConsent: false,
+        phoneConsent: false
       });
     } finally {
       setIsSubmitting(false);
@@ -245,9 +254,9 @@ const Contact = () => {
                       required
                     >
                       <option value="">Select an option</option>
-                      <option value="debrief">Complete Property Debrief (£195)</option>
-                      <option value="property-code">Property Code Test (£250)</option>
-                      <option value="community">Monthly Community (£97)</option>
+                      <option value="property-code">The Property Wealth Code</option>
+                      <option value="debrief">Complete Property Debrief</option>
+                      <option value="community">Monthly Community</option>
                       <option value="coaching">1:1 Coaching Programs</option>
                       <option value="other">Other Inquiry</option>
                     </select>
@@ -264,8 +273,32 @@ const Contact = () => {
                       required
                     />
                   </div>
+
+                  {/* Consent Checkboxes */}
+                  <div className="space-y-4 pt-2">
+                    <div className="flex items-start gap-3">
+                      <Checkbox 
+                        id="emailConsent"
+                        checked={formData.emailConsent}
+                        onCheckedChange={(checked) => setFormData(prev => ({ ...prev, emailConsent: checked === true }))}
+                      />
+                      <Label htmlFor="emailConsent" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
+                        I consent to receiving property insights and updates via email
+                      </Label>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Checkbox 
+                        id="phoneConsent"
+                        checked={formData.phoneConsent}
+                        onCheckedChange={(checked) => setFormData(prev => ({ ...prev, phoneConsent: checked === true }))}
+                      />
+                      <Label htmlFor="phoneConsent" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
+                        I consent to being contacted via phone regarding my inquiry
+                      </Label>
+                    </div>
+                  </div>
                   
-                  <Button 
+                  <Button
                     type="submit"
                     size="lg" 
                     className="w-full bg-gradient-primary hover:opacity-90 transition-opacity text-primary-foreground font-semibold"

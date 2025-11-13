@@ -39,7 +39,7 @@ const Footer = () => {
                 The Property Wealth Code
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Empowering women 40+ to build sustainable wealth through strategic property investment, without sacrificing family life.
+                Empowering women 35+ to build sustainable wealth through strategic property investment, without sacrificing family life.
               </p>
             </div>
             
@@ -101,7 +101,7 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground">Stay Connected</h4>
             <div className="space-y-4">
               <p className="text-sm text-muted-foreground">
-                Get weekly property insights and exclusive tips delivered to your inbox.
+                Get property insights and exclusive tips delivered to your inbox.
               </p>
               <div className="space-y-3">
                 <input
