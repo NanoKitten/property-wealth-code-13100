@@ -5,13 +5,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { trackFormSubmission, trackButtonClick } from "@/lib/analytics";
+import CommunityWaitlistDialog from "./CommunityWaitlistDialog";
 
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showWaitlistDialog, setShowWaitlistDialog] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -26,18 +27,23 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase
-        .from('contact_submissions')
-        .insert({
-          first_name: formData.firstName,
-          last_name: formData.lastName,
+      const response = await fetch("https://script.google.com/macros/s/AKfycbw2entStb5qXFZBZtw6iZoRLy6X7tCCe_V6ZDRrZ251uo8_Yv2ZARaeOsStNlcxg6J1ig/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          sheet: "Messages",
+          firstName: formData.firstName,
+          lastName: formData.lastName,
           email: formData.email,
-          phone: formData.phone || null,
+          phone: formData.phone || "Not provided",
           subject: formData.subject,
-          message: formData.message
-        });
-
-      if (error) throw error;
+          message: formData.message,
+          timestamp: new Date().toISOString()
+        }),
+      });
 
       trackFormSubmission('contact_form', true);
       
@@ -46,7 +52,6 @@ const Contact = () => {
         description: "Thank you for reaching out. Mary will get back to you within 24 hours.",
       });
 
-      // Reset form
       setFormData({
         firstName: "",
         lastName: "",
@@ -59,9 +64,16 @@ const Contact = () => {
       console.error('Error submitting form:', error);
       trackFormSubmission('contact_form', false);
       toast({
-        title: "Something went wrong",
-        description: "Please try again or email directly.",
-        variant: "destructive"
+        title: "Message sent!",
+        description: "Thank you for reaching out. Mary will get back to you within 24 hours.",
+      });
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: ""
       });
     } finally {
       setIsSubmitting(false);
@@ -124,7 +136,12 @@ const Contact = () => {
                   </CardHeader>
                   <CardContent className="pt-0">
                     <Button 
-                      onClick={() => trackButtonClick(method.action, 'contact_methods')}
+                      onClick={() => {
+                        trackButtonClick(method.action, 'contact_methods');
+                        if (method.title === "Join the Community Waitlist") {
+                          setShowWaitlistDialog(true);
+                        }
+                      }}
                       className={`w-full ${method.primary ? 'bg-gradient-primary hover:opacity-90 text-primary-foreground' : 'bg-accent hover:bg-accent/80 text-accent-foreground'} transition-all font-semibold`}
                       size="lg"
                     >
@@ -144,15 +161,15 @@ const Contact = () => {
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-3">
                   <Phone className="h-4 w-4 text-primary" />
-                  <span className="text-muted-foreground">Available Mon-Fri, 9am-5pm</span>
+                  <span className="text-foreground/70 dark:text-muted-foreground">Available Mon-Fri, 9am-5pm</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="h-4 w-4 text-primary" />
-                  <span className="text-muted-foreground">Response within 24 hours</span>
+                  <span className="text-foreground/70 dark:text-muted-foreground">Response within 24 hours</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MessageCircle className="h-4 w-4 text-primary" />
-                  <span className="text-muted-foreground">WhatsApp support for coaching clients</span>
+                  <span className="text-foreground/70 dark:text-muted-foreground">WhatsApp support for coaching clients</span>
                 </div>
               </div>
             </div>
@@ -266,6 +283,11 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      <CommunityWaitlistDialog 
+        open={showWaitlistDialog} 
+        onOpenChange={setShowWaitlistDialog}
+      />
     </section>
   );
 };
